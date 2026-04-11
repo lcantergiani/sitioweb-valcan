@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir:*)",
+      "Bash(mv \"Logo Valcan Transparente.png\" \"PERSPEC GRAN STGO.jpg\" \"Vista elevación desde la esquina sur-oriente.jpg\" \"Local 4 , Foto Fachada lateral2.jpg\" \"foto_0000000420190502123648.jpg\" \"robert-bye-WTPp4wgourk-unsplash.jpg\" \"Home Page Sitio Web Valcan.jpg\" assets/images/)",
+      "Bash(mv style.css assets/css/)",
+      "Bash(mv:*)",
+      "Bash(mkdir -p pages)",
+      "Bash(mv empresas.html pages/)"
+    ]
+  }
+}
