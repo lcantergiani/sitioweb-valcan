@@ -493,6 +493,20 @@ body {
   margin-top: 0.25rem;
 }
 
+.proyectos__badge {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 3px 8px;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #fff;
+  background: transparent;
+  border: 1px solid #fff;
+  border-radius: 2px;
+}
+
 /* Stats */
 .proyectos__stats {
   display: grid;
