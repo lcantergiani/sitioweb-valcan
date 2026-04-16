@@ -10,7 +10,9 @@
       "Bash(mv \"Logo Santa Elena.png\" \"logo-santa-elena.png\")",
       "Bash(mv \"VALLE REAL 4COLORES.jpg\" \"valle-real-4colores.jpg\")",
       "Bash(mv \"LA INVERNADA 4COLORES.jpg\" \"la-invernada-4colores.jpg\")",
-      "Bash(ls:*)"
+      "Bash(ls:*)",
+      "Bash(mv \"CANCOR 4COLORES.jpg\" \"cancor-4colores.jpg\")",
+      "Bash(mv \"logo AVC.png\" \"logo-avc.png\")"
     ]
   }
 }
