@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="assets/css/style.css">
   <style>
     .portfolio-card { transition: transform 0.2s ease, box-shadow 0.2s ease; cursor: pointer; }
+    #bento-cards { transition: opacity 0.2s ease; }
     .portfolio-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.3); }
     .mobile-only { display: none; }
     .desktop-only { display: inline; }
@@ -177,14 +178,7 @@
   <div class="bento-title" style="color: white; font-size: 36px; font-weight: 500; margin-bottom: 0.5rem;">Proyectos Destacados</div>
   <div class="bento-subtitle" style="color: #B5D4F4; font-size: 14px; max-width: 640px; margin: 0 auto; text-wrap: balance;">Seis décadas construyendo un portafolio diversificado en Chile y Estados Unidos</div>
 </div>
-<div class="bento-filters" style="display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin-top: 2rem; margin-bottom: 2rem;">
-  <div class="bento-tab" style="background: #23bdbb; color: #0F6E56; padding: 10px 18px; border-radius: 8px; font-size: 13px; font-weight: 500; display: flex; align-items: center; gap: 8px;">Todos <span style="background: rgba(15,110,86,0.2); padding: 2px 8px; border-radius: 10px; font-size: 11px;">16</span></div>
-  <div class="bento-tab" style="background: rgba(255,255,255,0.08); color: white; padding: 10px 18px; border-radius: 8px; font-size: 13px; font-weight: 500; display: flex; align-items: center; gap: 8px; border: 1px solid rgba(255,255,255,0.12);">Retail <span style="color: #B5D4F4; font-size: 11px; text-shadow: 0 1px 3px rgba(0,0,0,0.7);">7</span></div>
-  <div class="bento-tab" style="background: rgba(255,255,255,0.08); color: white; padding: 10px 18px; border-radius: 8px; font-size: 13px; font-weight: 500; display: flex; align-items: center; gap: 8px; border: 1px solid rgba(255,255,255,0.12);">Residencial <span style="color: #B5D4F4; font-size: 11px; text-shadow: 0 1px 3px rgba(0,0,0,0.7);">4</span></div>
-  <div class="bento-tab" style="background: rgba(255,255,255,0.08); color: white; padding: 10px 18px; border-radius: 8px; font-size: 13px; font-weight: 500; display: flex; align-items: center; gap: 8px; border: 1px solid rgba(255,255,255,0.12);">Hotelería <span style="color: #B5D4F4; font-size: 11px; text-shadow: 0 1px 3px rgba(0,0,0,0.7);">1</span></div>
-  <div class="bento-tab" style="background: rgba(255,255,255,0.08); color: white; padding: 10px 18px; border-radius: 8px; font-size: 13px; font-weight: 500; display: flex; align-items: center; gap: 8px; border: 1px solid rgba(255,255,255,0.12);">Agrícola <span style="color: #B5D4F4; font-size: 11px; text-shadow: 0 1px 3px rgba(0,0,0,0.7);">1</span></div>
-  <div class="bento-tab" style="background: rgba(255,255,255,0.08); color: white; padding: 10px 18px; border-radius: 8px; font-size: 13px; font-weight: 500; display: flex; align-items: center; gap: 8px; border: 1px solid rgba(255,255,255,0.12);">Energía <span style="color: #B5D4F4; font-size: 11px; text-shadow: 0 1px 3px rgba(0,0,0,0.7);">1</span></div>
-  <div class="bento-tab" style="background: rgba(255,255,255,0.08); color: white; padding: 10px 18px; border-radius: 8px; font-size: 13px; font-weight: 500; display: flex; align-items: center; gap: 8px; border: 1px solid rgba(255,255,255,0.12);">Inversiones <span style="color: #B5D4F4; font-size: 11px; text-shadow: 0 1px 3px rgba(0,0,0,0.7);">1</span></div>
+<div class="bento-filters" id="bento-filters" style="display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin-top: 2rem; margin-bottom: 2rem;">
 </div>
 <div class="bento-grid" id="bento-cards" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; max-width: 1280px; margin: 0 auto;">
 </div>

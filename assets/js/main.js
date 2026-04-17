@@ -496,11 +496,65 @@ const proyectos = [
   { id: 'amatime', nombre: 'Amatime', categoria: 'inversiones', size: 'standard', destacado: false, imagen: null },
 ];
 
+let currentFilter = 'destacados';
+
+const filterTabs = [
+  { key: 'destacados', label: 'Destacados' },
+  { key: 'centros-comerciales', label: 'Centros Comerciales' },
+  { key: 'retail', label: 'Retail' },
+  { key: 'residencial', label: 'Residencial' },
+  { key: 'hoteleria', label: 'Hotelería' },
+  { key: 'agricola', label: 'Agrícola' },
+  { key: 'energia', label: 'Energía' },
+  { key: 'inversiones', label: 'Inversiones' },
+];
+
+function renderFilters() {
+  const container = document.getElementById('bento-filters');
+  if (!container) return;
+
+  container.innerHTML = filterTabs.map(tab => {
+    const count = tab.key === 'destacados'
+      ? proyectos.filter(p => p.destacado).length
+      : proyectos.filter(p => p.categoria === tab.key).length;
+    const isActive = currentFilter === tab.key;
+    const activeStyle = 'background:#23bdbb;color:#0F6E56;';
+    const inactiveStyle = 'background:rgba(255,255,255,0.08);color:white;border:1px solid rgba(255,255,255,0.12);';
+    const countStyle = isActive
+      ? 'background:rgba(15,110,86,0.2);padding:2px 8px;border-radius:10px;font-size:11px;'
+      : 'color:#B5D4F4;font-size:11px;';
+    return `<div class="bento-tab" data-filter="${tab.key}" style="${isActive ? activeStyle : inactiveStyle}padding:10px 18px;border-radius:8px;font-size:13px;font-weight:500;display:flex;align-items:center;gap:8px;cursor:pointer;">${tab.label} <span style="${countStyle}">${count}</span></div>`;
+  }).join('');
+
+  container.querySelectorAll('.bento-tab').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const filter = btn.getAttribute('data-filter');
+      if (filter === currentFilter) return;
+      currentFilter = filter;
+      const grid = document.getElementById('bento-cards');
+      grid.style.opacity = '0';
+      setTimeout(() => {
+        renderPortfolio();
+        renderFilters();
+        grid.style.opacity = '1';
+      }, 200);
+    });
+  });
+}
+
 function renderPortfolio() {
   const container = document.getElementById('bento-cards');
   if (!container) return;
 
-  const items = proyectos.filter(p => p.destacado);
+  let items;
+  if (currentFilter === 'destacados') {
+    items = proyectos.filter(p => p.destacado);
+  } else {
+    items = proyectos
+      .filter(p => p.categoria === currentFilter)
+      .sort((a, b) => (b.destacado ? 1 : 0) - (a.destacado ? 1 : 0));
+  }
+
   container.innerHTML = items.map(p => {
     const cat = catConfig[p.categoria];
     const isHeroXL = p.size === 'hero-xl';
@@ -570,4 +624,5 @@ function renderPortfolio() {
   }).join('\n');
 }
 
+renderFilters();
 renderPortfolio();
