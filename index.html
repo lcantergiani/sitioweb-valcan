@@ -12,6 +12,75 @@
   <style>
     .portfolio-card { transition: transform 0.2s ease, box-shadow 0.2s ease; cursor: pointer; }
     .portfolio-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.3); }
+    .mobile-only { display: none; }
+    .desktop-only { display: inline; }
+
+    @media (max-width: 768px) {
+      .mobile-only { display: inline !important; }
+      .desktop-only { display: none !important; }
+
+      /* Section padding */
+      .proyectos { padding: 2rem 1rem 2.5rem !important; }
+
+      /* Header */
+      .bento-header { margin-bottom: 1.5rem !important; }
+      .bento-label { font-size: 11px !important; letter-spacing: 2.5px !important; }
+      .bento-title { font-size: 26px !important; line-height: 1.2 !important; }
+      .bento-subtitle { font-size: 13px !important; line-height: 1.5 !important; padding: 0 0.5rem; }
+
+      /* Filters — horizontal scroll */
+      .bento-filters {
+        flex-wrap: nowrap !important;
+        overflow-x: auto !important;
+        scrollbar-width: none !important;
+        -webkit-overflow-scrolling: touch;
+        margin-left: -1rem !important;
+        margin-right: -1rem !important;
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+        margin-top: 1.25rem !important;
+        margin-bottom: 1.25rem !important;
+        gap: 6px !important;
+        justify-content: flex-start !important;
+      }
+      .bento-filters::-webkit-scrollbar { display: none; }
+      .bento-tab {
+        flex-shrink: 0 !important;
+        padding: 7px 14px !important;
+        border-radius: 20px !important;
+        font-size: 12px !important;
+      }
+
+      /* Grid — 2 columns, heroes span both */
+      .bento-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px !important;
+      }
+
+      /* Hero cards — full width */
+      .bento-hero {
+        grid-column: 1 / -1 !important;
+        grid-row: unset !important;
+        min-height: 140px !important;
+      }
+      .bento-hero--main { min-height: 260px !important; }
+
+      /* Standard cards */
+      .portfolio-card:not(.bento-hero) {
+        min-height: 95px !important;
+        padding: 0.85rem !important;
+      }
+
+      /* Stats */
+      .bento-stats {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1rem !important;
+        margin-top: 2rem !important;
+        padding-top: 1.5rem !important;
+      }
+      .bento-stat__num { font-size: 24px !important; }
+      .bento-stat__label { font-size: 10px !important; letter-spacing: 1px !important; }
+    }
   </style>
 </head>
 <body>
@@ -103,23 +172,23 @@
 
   <!-- GRID PROYECTOS -->
   <section class="proyectos" id="proyectos" style="padding: 4rem 1.5rem;">
-<div style="text-align: center; margin-bottom: 2.5rem;">
-  <div style="color: #23bdbb; font-size: 13px; letter-spacing: 3px; margin-bottom: 0.75rem;">PORTAFOLIO</div>
-  <div style="color: white; font-size: 36px; font-weight: 500; margin-bottom: 0.5rem;">Proyectos Destacados</div>
-  <div style="color: #B5D4F4; font-size: 14px; max-width: 640px; margin: 0 auto; text-wrap: balance;">Seis décadas construyendo un portafolio diversificado en Chile y Estados Unidos</div>
+<div class="bento-header" style="text-align: center; margin-bottom: 2.5rem;">
+  <div class="bento-label" style="color: #23bdbb; font-size: 13px; letter-spacing: 3px; margin-bottom: 0.75rem;">PORTAFOLIO</div>
+  <div class="bento-title" style="color: white; font-size: 36px; font-weight: 500; margin-bottom: 0.5rem;">Proyectos Destacados</div>
+  <div class="bento-subtitle" style="color: #B5D4F4; font-size: 14px; max-width: 640px; margin: 0 auto; text-wrap: balance;">Seis décadas construyendo un portafolio diversificado en Chile y Estados Unidos</div>
 </div>
-<div style="display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin-top: 2rem; margin-bottom: 2rem;">
-  <div style="background: #23bdbb; color: #0F6E56; padding: 10px 18px; border-radius: 8px; font-size: 13px; font-weight: 500; display: flex; align-items: center; gap: 8px;">Todos <span style="background: rgba(15,110,86,0.2); padding: 2px 8px; border-radius: 10px; font-size: 11px;">16</span></div>
-  <div style="background: rgba(255,255,255,0.08); color: white; padding: 10px 18px; border-radius: 8px; font-size: 13px; font-weight: 500; display: flex; align-items: center; gap: 8px; border: 1px solid rgba(255,255,255,0.12);">Retail <span style="color: #B5D4F4; font-size: 11px; text-shadow: 0 1px 3px rgba(0,0,0,0.7);">7</span></div>
-  <div style="background: rgba(255,255,255,0.08); color: white; padding: 10px 18px; border-radius: 8px; font-size: 13px; font-weight: 500; display: flex; align-items: center; gap: 8px; border: 1px solid rgba(255,255,255,0.12);">Residencial <span style="color: #B5D4F4; font-size: 11px; text-shadow: 0 1px 3px rgba(0,0,0,0.7);">4</span></div>
-  <div style="background: rgba(255,255,255,0.08); color: white; padding: 10px 18px; border-radius: 8px; font-size: 13px; font-weight: 500; display: flex; align-items: center; gap: 8px; border: 1px solid rgba(255,255,255,0.12);">Hotelería <span style="color: #B5D4F4; font-size: 11px; text-shadow: 0 1px 3px rgba(0,0,0,0.7);">1</span></div>
-  <div style="background: rgba(255,255,255,0.08); color: white; padding: 10px 18px; border-radius: 8px; font-size: 13px; font-weight: 500; display: flex; align-items: center; gap: 8px; border: 1px solid rgba(255,255,255,0.12);">Agrícola <span style="color: #B5D4F4; font-size: 11px; text-shadow: 0 1px 3px rgba(0,0,0,0.7);">1</span></div>
-  <div style="background: rgba(255,255,255,0.08); color: white; padding: 10px 18px; border-radius: 8px; font-size: 13px; font-weight: 500; display: flex; align-items: center; gap: 8px; border: 1px solid rgba(255,255,255,0.12);">Energía <span style="color: #B5D4F4; font-size: 11px; text-shadow: 0 1px 3px rgba(0,0,0,0.7);">1</span></div>
-  <div style="background: rgba(255,255,255,0.08); color: white; padding: 10px 18px; border-radius: 8px; font-size: 13px; font-weight: 500; display: flex; align-items: center; gap: 8px; border: 1px solid rgba(255,255,255,0.12);">Inversiones <span style="color: #B5D4F4; font-size: 11px; text-shadow: 0 1px 3px rgba(0,0,0,0.7);">1</span></div>
+<div class="bento-filters" style="display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin-top: 2rem; margin-bottom: 2rem;">
+  <div class="bento-tab" style="background: #23bdbb; color: #0F6E56; padding: 10px 18px; border-radius: 8px; font-size: 13px; font-weight: 500; display: flex; align-items: center; gap: 8px;">Todos <span style="background: rgba(15,110,86,0.2); padding: 2px 8px; border-radius: 10px; font-size: 11px;">16</span></div>
+  <div class="bento-tab" style="background: rgba(255,255,255,0.08); color: white; padding: 10px 18px; border-radius: 8px; font-size: 13px; font-weight: 500; display: flex; align-items: center; gap: 8px; border: 1px solid rgba(255,255,255,0.12);">Retail <span style="color: #B5D4F4; font-size: 11px; text-shadow: 0 1px 3px rgba(0,0,0,0.7);">7</span></div>
+  <div class="bento-tab" style="background: rgba(255,255,255,0.08); color: white; padding: 10px 18px; border-radius: 8px; font-size: 13px; font-weight: 500; display: flex; align-items: center; gap: 8px; border: 1px solid rgba(255,255,255,0.12);">Residencial <span style="color: #B5D4F4; font-size: 11px; text-shadow: 0 1px 3px rgba(0,0,0,0.7);">4</span></div>
+  <div class="bento-tab" style="background: rgba(255,255,255,0.08); color: white; padding: 10px 18px; border-radius: 8px; font-size: 13px; font-weight: 500; display: flex; align-items: center; gap: 8px; border: 1px solid rgba(255,255,255,0.12);">Hotelería <span style="color: #B5D4F4; font-size: 11px; text-shadow: 0 1px 3px rgba(0,0,0,0.7);">1</span></div>
+  <div class="bento-tab" style="background: rgba(255,255,255,0.08); color: white; padding: 10px 18px; border-radius: 8px; font-size: 13px; font-weight: 500; display: flex; align-items: center; gap: 8px; border: 1px solid rgba(255,255,255,0.12);">Agrícola <span style="color: #B5D4F4; font-size: 11px; text-shadow: 0 1px 3px rgba(0,0,0,0.7);">1</span></div>
+  <div class="bento-tab" style="background: rgba(255,255,255,0.08); color: white; padding: 10px 18px; border-radius: 8px; font-size: 13px; font-weight: 500; display: flex; align-items: center; gap: 8px; border: 1px solid rgba(255,255,255,0.12);">Energía <span style="color: #B5D4F4; font-size: 11px; text-shadow: 0 1px 3px rgba(0,0,0,0.7);">1</span></div>
+  <div class="bento-tab" style="background: rgba(255,255,255,0.08); color: white; padding: 10px 18px; border-radius: 8px; font-size: 13px; font-weight: 500; display: flex; align-items: center; gap: 8px; border: 1px solid rgba(255,255,255,0.12);">Inversiones <span style="color: #B5D4F4; font-size: 11px; text-shadow: 0 1px 3px rgba(0,0,0,0.7);">1</span></div>
 </div>
-<div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; max-width: 1280px; margin: 0 auto;">
+<div class="bento-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; max-width: 1280px; margin: 0 auto;">
   <!-- Punto Centro Quilicura -->
-  <div class="portfolio-card" style="grid-column: span 2; grid-row: span 2; border-radius: 12px; position: relative; min-height: 320px; display: flex; flex-direction: column; justify-content: space-between; border: 1px solid rgba(255,255,255,0.12); overflow: hidden;">
+  <div class="portfolio-card bento-hero bento-hero--main" style="grid-column: span 2; grid-row: span 2; border-radius: 12px; position: relative; min-height: 320px; display: flex; flex-direction: column; justify-content: space-between; border: 1px solid rgba(255,255,255,0.12); overflow: hidden;">
     <div style="position: absolute; inset: 0; background-image: url('assets/images/punto-centro.jpg'); background-size: cover; background-position: center; border-radius: 12px;"></div>
     <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.5) 40%, rgba(0,0,0,0.1) 75%, transparent 100%); border-radius: 12px;"></div>
     <div style="position: relative; z-index: 2; padding: 1.5rem 1.5rem 0;">
@@ -137,7 +206,7 @@
     </div>
   </div>
   <!-- La Florida -->
-  <div class="portfolio-card" style="grid-column: span 2; border-radius: 12px; min-height: 150px; display: flex; flex-direction: column; justify-content: space-between; border: 1px solid rgba(255,255,255,0.12); position: relative; overflow: hidden;">
+  <div class="portfolio-card bento-hero" style="grid-column: span 2; border-radius: 12px; min-height: 150px; display: flex; flex-direction: column; justify-content: space-between; border: 1px solid rgba(255,255,255,0.12); position: relative; overflow: hidden;">
     <div style="position: absolute; inset: 0; background-image: url('assets/images/centro-comercial-la-florda.jpg'); background-size: cover; background-position: center; border-radius: 12px;"></div>
     <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.5) 40%, rgba(0,0,0,0.1) 75%, transparent 100%); border-radius: 12px;"></div>
     <div style="position: relative; z-index: 2; padding: 1.25rem;">
@@ -169,7 +238,7 @@
     </div>
   </div>
   <!-- Hotel Hilton -->
-  <div class="portfolio-card" style="grid-column: span 2; border-radius: 12px; min-height: 150px; display: flex; flex-direction: column; justify-content: space-between; border: 1px solid rgba(255,255,255,0.12); position: relative; overflow: hidden;">
+  <div class="portfolio-card bento-hero" style="grid-column: span 2; border-radius: 12px; min-height: 150px; display: flex; flex-direction: column; justify-content: space-between; border: 1px solid rgba(255,255,255,0.12); position: relative; overflow: hidden;">
     <div style="position: absolute; inset: 0; background-image: url('assets/images/hilton.jpg'); background-size: cover; background-position: center; border-radius: 12px;"></div>
     <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.5) 40%, rgba(0,0,0,0.1) 75%, transparent 100%); border-radius: 12px;"></div>
     <div style="position: relative; z-index: 2; padding: 1.25rem;">
@@ -271,11 +340,11 @@
     </div>
   </div>
 </div>
-<div style="margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; max-width: 1000px; margin-left: auto; margin-right: auto;">
-  <div style="text-align: center;"><div style="color: #23bdbb; font-size: 32px; font-weight: 500; line-height: 1;">+2 MM</div><div style="color: #B5D4F4; font-size: 11px; text-shadow: 0 1px 3px rgba(0,0,0,0.7); margin-top: 8px; letter-spacing: 1px;">M² EN RETAIL</div></div>
-  <div style="text-align: center;"><div style="color: #23bdbb; font-size: 32px; font-weight: 500; line-height: 1;">+1.500</div><div style="color: #B5D4F4; font-size: 11px; text-shadow: 0 1px 3px rgba(0,0,0,0.7); margin-top: 8px; letter-spacing: 1px;">UNIDADES RESIDENCIALES</div></div>
-  <div style="text-align: center;"><div style="color: #23bdbb; font-size: 32px; font-weight: 500; line-height: 1;">+50</div><div style="color: #B5D4F4; font-size: 11px; text-shadow: 0 1px 3px rgba(0,0,0,0.7); margin-top: 8px; letter-spacing: 1px;">EMPRESAS EN PORTAFOLIO</div></div>
-  <div style="text-align: center;"><div style="color: #23bdbb; font-size: 32px; font-weight: 500; line-height: 1;">60+</div><div style="color: #B5D4F4; font-size: 11px; text-shadow: 0 1px 3px rgba(0,0,0,0.7); margin-top: 8px; letter-spacing: 1px;">AÑOS DE EXPERIENCIA</div></div>
+<div class="bento-stats" style="margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; max-width: 1000px; margin-left: auto; margin-right: auto;">
+  <div class="bento-stat" style="text-align: center;"><div class="bento-stat__num" style="color: #23bdbb; font-size: 32px; font-weight: 500; line-height: 1;">+2 MM</div><div class="bento-stat__label" style="color: #B5D4F4; font-size: 11px; text-shadow: 0 1px 3px rgba(0,0,0,0.7); margin-top: 8px; letter-spacing: 1px;"><span class="desktop-only">M² EN RETAIL</span><span class="mobile-only">M² EN RETAIL</span></div></div>
+  <div class="bento-stat" style="text-align: center;"><div class="bento-stat__num" style="color: #23bdbb; font-size: 32px; font-weight: 500; line-height: 1;">+1.500</div><div class="bento-stat__label" style="color: #B5D4F4; font-size: 11px; text-shadow: 0 1px 3px rgba(0,0,0,0.7); margin-top: 8px; letter-spacing: 1px;"><span class="desktop-only">UNIDADES RESIDENCIALES</span><span class="mobile-only">UNIDADES RESID.</span></div></div>
+  <div class="bento-stat" style="text-align: center;"><div class="bento-stat__num" style="color: #23bdbb; font-size: 32px; font-weight: 500; line-height: 1;">+50</div><div class="bento-stat__label" style="color: #B5D4F4; font-size: 11px; text-shadow: 0 1px 3px rgba(0,0,0,0.7); margin-top: 8px; letter-spacing: 1px;"><span class="desktop-only">EMPRESAS EN PORTAFOLIO</span><span class="mobile-only">EMPRESAS</span></div></div>
+  <div class="bento-stat" style="text-align: center;"><div class="bento-stat__num" style="color: #23bdbb; font-size: 32px; font-weight: 500; line-height: 1;">60+</div><div class="bento-stat__label" style="color: #B5D4F4; font-size: 11px; text-shadow: 0 1px 3px rgba(0,0,0,0.7); margin-top: 8px; letter-spacing: 1px;"><span class="desktop-only">AÑOS DE EXPERIENCIA</span><span class="mobile-only">AÑOS</span></div></div>
 </div>
   </section>
 
