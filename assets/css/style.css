@@ -730,73 +730,110 @@ body {
 
 .timeline__list {
   position: relative;
-  max-width: 700px;
+  max-width: 900px;
   margin: 0 auto;
-  padding-left: 2rem;
+  padding: 0 1rem;
 }
 
+/* Línea central continua */
 .timeline__list::before {
   content: '';
   position: absolute;
-  left: 6px;
+  left: 20px;
   top: 0;
   bottom: 0;
   width: 2px;
-  background: rgba(255,255,255,0.15);
+  background: rgba(93, 202, 165, 0.4);
 }
 
+/* Cada hito: mobile-first como columna izquierda */
 .timeline__item {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: 0;
+  margin-bottom: 2.5rem;
   position: relative;
-  padding-bottom: 2.5rem;
 }
 
 .timeline__item:last-child {
-  padding-bottom: 0;
+  margin-bottom: 0;
 }
 
-.timeline__stem {
+/* Centro: contiene el dot */
+.timeline__center {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 0.2rem;
+  grid-row: 1;
+}
+
+/* Spacer oculto en mobile */
+.timeline__spacer {
   display: none;
 }
 
+/* Dot estándar */
 .timeline__dot {
-  position: absolute;
-  left: -2rem;
-  top: 0.35rem;
-  width: 14px;
-  height: 14px;
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
-  background: var(--teal);
-  border: 3px solid var(--azul);
-  z-index: 1;
-  transform: translateX(calc(-50% + 7px));
+  background: #5DCAA5;
+  box-shadow: 0 0 0 4px rgba(93, 202, 165, 0.2), 0 0 0 8px rgba(93, 202, 165, 0.08);
+  flex-shrink: 0;
+  z-index: 2;
+  position: relative;
 }
 
-.timeline__card {
-  background: rgba(255,255,255,0.06);
-  border-radius: 10px;
-  padding: 1.25rem 1.5rem;
-  border: 1px solid rgba(255,255,255,0.08);
+/* Dot fundacional */
+.timeline__item--founder .timeline__dot {
+  width: 20px;
+  height: 20px;
+  box-shadow: 0 0 0 5px rgba(93, 202, 165, 0.25), 0 0 0 10px rgba(93, 202, 165, 0.1);
+}
+
+/* Dot presente */
+.timeline__item--present .timeline__dot {
+  width: 16px;
+  height: 16px;
+  background: #fff;
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.25), 0 0 0 8px rgba(255, 255, 255, 0.1);
+}
+
+/* Contenido del hito */
+.timeline__content {
+  text-align: left;
+  padding-left: 1rem;
 }
 
 .timeline__year {
-  font-size: 0.7rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  color: var(--teal);
+  display: block;
+  font-size: 18.7px;
+  font-weight: 500;
+  color: #5DCAA5;
+  margin-bottom: 0.25rem;
 }
 
-.timeline__card h3 {
+.timeline__item--founder .timeline__year {
+  font-size: 22px;
+}
+
+.timeline__content h3 {
   color: var(--blanco);
-  font-size: 1.05rem;
-  font-weight: 700;
-  margin: 0.35rem 0 0.5rem;
+  font-size: 15px;
+  font-weight: 500;
+  margin: 0 0 0.35rem;
 }
 
-.timeline__card p {
-  color: rgba(255,255,255,0.65);
-  font-size: 0.875rem;
+.timeline__item--founder .timeline__content h3 {
+  font-size: 16px;
+}
+
+.timeline__content p {
+  color: #B5D4F4;
+  font-size: 13px;
   line-height: 1.6;
+  margin: 0;
 }
 
 /* ===== PREMIOS ===== */
@@ -1183,77 +1220,63 @@ body {
     grid-template-columns: repeat(3, 1fr);
   }
 
-  /* Timeline desktop — 2 rows (4 + 3 centered) */
-  .timeline__list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0;
-    max-width: 100%;
-    padding-left: 0;
-    position: relative;
-  }
-
+  /* Timeline desktop — vertical alternada */
   .timeline__list::before {
-    display: none;
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   .timeline__item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-bottom: 0;
-    position: relative;
-    width: 25%;
-    box-sizing: border-box;
-    margin-bottom: 2rem;
+    grid-template-columns: 1fr 60px 1fr;
+    margin-bottom: 3.5rem;
   }
 
-  .timeline__stem {
+  .timeline__spacer {
     display: block;
-    width: 1px;
-    height: 28px;
-    background: var(--teal);
-    opacity: 0.5;
-    flex-shrink: 0;
+  }
+
+  /* Izquierda: contenido | centro | spacer */
+  .timeline__item--left .timeline__content {
+    text-align: right;
+    padding-right: 1.5rem;
+    padding-left: 0;
+    grid-column: 1;
+  }
+  .timeline__item--left .timeline__center {
+    grid-column: 2;
+  }
+  .timeline__item--left .timeline__spacer {
+    grid-column: 3;
+  }
+
+  /* Derecha: spacer | centro | contenido */
+  .timeline__item--right .timeline__spacer {
+    grid-column: 1;
+  }
+  .timeline__item--right .timeline__center {
+    grid-column: 2;
+  }
+  .timeline__item--right .timeline__content {
+    text-align: left;
+    padding-left: 1.5rem;
+    padding-right: 0;
+    grid-column: 3;
   }
 
   .timeline__year {
-    font-size: 1.1rem;
-    font-weight: 800;
-    letter-spacing: 0.05em;
-    color: var(--teal);
-    margin-bottom: 0;
+    font-size: 22px;
   }
 
-  .timeline__dot {
-    position: relative;
-    left: auto;
-    top: auto;
-    transform: none;
-    width: 14px;
-    height: 14px;
-    background: var(--teal);
-    border: 3px solid var(--blanco);
-    flex-shrink: 0;
-    z-index: 2;
+  .timeline__item--founder .timeline__year {
+    font-size: 26px;
   }
 
-  .timeline__card {
-    text-align: center;
-    padding: 0.75rem 0.5rem;
-    background: transparent;
-    border: none;
+  .timeline__content h3 {
+    font-size: 15px;
   }
 
-  .timeline__card h3 {
-    font-size: 0.8rem;
-    margin: 0 0 0.3rem;
-  }
-
-  .timeline__card p {
-    font-size: 0.7rem;
-    line-height: 1.45;
+  .timeline__item--founder .timeline__content h3 {
+    font-size: 16px;
   }
 
   /* Empresas desktop */
