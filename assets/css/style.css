@@ -279,14 +279,24 @@ body {
 
 .hero__title {
   color: var(--blanco);
-  font-size: clamp(2.2rem, 6vw, 4.5rem);
+  font-size: clamp(1.4rem, 3.9vw, 2.9rem);
   font-weight: 800;
   line-height: 1.1;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.8rem;
   letter-spacing: -0.02em;
   opacity: 0;
   transform: translateY(20px);
   animation: fadeUp 0.8s ease 0.5s forwards;
+}
+
+.hero__sub {
+  color: #fff;
+  font-size: clamp(1rem, 2.2vw, 1.25rem);
+  font-weight: 400;
+  margin-bottom: 2rem;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.8s ease 0.7s forwards;
 }
 
 .hero__desc {
