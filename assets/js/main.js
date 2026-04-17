@@ -459,12 +459,12 @@ if (savedLang && savedLang !== 'es') {
 // ===== PORTAFOLIO DATA-DRIVEN =====
 
 const catConfig = {
-  'retail':       { label: 'RETAIL',        bg: 'rgba(35,189,187,0.9)',  color: '#0F6E56' },
-  'residencial':  { label: 'RESIDENCIAL',   bg: 'rgba(127,119,221,0.9)', color: 'white' },
-  'hoteleria':    { label: 'HOTELERÍA',     bg: 'rgba(239,159,39,0.9)',  color: 'white' },
-  'agricola':     { label: 'AGRÍCOLA',      bg: 'rgba(151,196,89,0.9)',  color: '#1a3a0a' },
-  'energia':      { label: 'ENERGÍA',       bg: 'rgba(239,159,39,0.9)',  color: 'white' },
-  'inversiones':  { label: 'INVERSIONES',   bg: 'rgba(244,192,209,0.9)', color: '#5a1a3a' },
+  'retail':       { label: 'RETAIL',        bg: 'rgba(93,202,165,0.2)',    color: '#5DCAA5' },
+  'residencial':  { label: 'RESIDENCIAL',   bg: 'rgba(127,148,197,0.22)', color: '#A5B4D1' },
+  'hoteleria':    { label: 'HOTELERÍA',     bg: 'rgba(180,160,120,0.2)',  color: '#D4BC99' },
+  'agricola':     { label: 'AGRÍCOLA',      bg: 'rgba(140,170,120,0.22)', color: '#A9C49A' },
+  'energia':      { label: 'ENERGÍA',       bg: 'rgba(200,170,100,0.2)',  color: '#D4BC7A' },
+  'inversiones':  { label: 'INVERSIONES',   bg: 'rgba(170,140,180,0.22)', color: '#C5AACB' },
 };
 
 const proyectos = [
@@ -586,10 +586,10 @@ function renderPortfolio() {
     const overlay = isHero ? heroOverlay : stdOverlay;
 
     // Badge HTML
-    const badgeSize = isHeroXL ? 'padding:4px 10px;font-size:11px;' : 'padding:3px 8px;font-size:10px;';
-    const catBadge = `<div style="background:${cat.bg};color:${cat.color};${badgeSize}border-radius:4px;font-weight:500;letter-spacing:0.5px;z-index:3;align-self:flex-start;display:inline-block;">${cat.label}</div>`;
+    const badgeStyle = 'padding:4px 11px;font-size:11px;border-radius:4px;font-weight:500;letter-spacing:0.5px;text-transform:uppercase;z-index:3;';
+    const catBadge = `<div style="background:${cat.bg};color:${cat.color};${badgeStyle}align-self:flex-start;display:inline-block;">${cat.label}</div>`;
     const extraBadges = (p.badges || []).map(b =>
-      `<div style="background:rgba(239,159,39,0.95);color:white;${badgeSize}border-radius:4px;font-weight:500;letter-spacing:0.5px;z-index:3;${!isHero ? 'margin-left:auto;' : ''}">${b}</div>`
+      `<div style="background:rgba(218,165,32,0.15);color:#D4A54C;border:1px solid rgba(218,165,32,0.35);${badgeStyle}${!isHero ? 'margin-left:auto;' : ''}">${b}</div>`
     ).join('');
 
     // Title style
