@@ -589,7 +589,7 @@ function renderPortfolio() {
 
     // Badge HTML
     const badgeSize = isHeroXL ? 'padding:4px 10px;font-size:11px;' : 'padding:3px 8px;font-size:10px;';
-    const catBadge = `<div style="background:${cat.bg};color:${cat.color};${badgeSize}border-radius:4px;font-weight:500;letter-spacing:0.5px;z-index:3;">${cat.label}</div>`;
+    const catBadge = `<div style="background:${cat.bg};color:${cat.color};${badgeSize}border-radius:4px;font-weight:500;letter-spacing:0.5px;z-index:3;align-self:flex-start;display:inline-block;">${cat.label}</div>`;
     const extraBadges = (p.badges || []).map(b =>
       `<div style="background:rgba(239,159,39,0.95);color:white;${badgeSize}border-radius:4px;font-weight:500;letter-spacing:0.5px;z-index:3;${!isHero ? 'margin-left:auto;' : ''}">${b}</div>`
     ).join('');
