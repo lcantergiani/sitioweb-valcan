@@ -459,7 +459,6 @@ if (savedLang && savedLang !== 'es') {
 // ===== PORTAFOLIO DATA-DRIVEN =====
 
 const catConfig = {
-  'centros-comerciales': { label: 'CENTRO COMERCIAL', bg: 'rgba(35,189,187,0.9)', color: '#0F6E56' },
   'retail':       { label: 'RETAIL',        bg: 'rgba(35,189,187,0.9)',  color: '#0F6E56' },
   'residencial':  { label: 'RESIDENCIAL',   bg: 'rgba(127,119,221,0.9)', color: 'white' },
   'hoteleria':    { label: 'HOTELERÍA',     bg: 'rgba(239,159,39,0.9)',  color: 'white' },
@@ -469,7 +468,7 @@ const catConfig = {
 };
 
 const proyectos = [
-  { id: 'quilicura', nombre: 'Punto Centro Quilicura', categoria: 'centros-comerciales', size: 'hero-xl', destacado: true, badges: ['EN DESARROLLO'], imagen: 'punto-centro.jpg' },
+  { id: 'quilicura', nombre: 'Punto Centro Quilicura', categoria: 'retail', size: 'hero-xl', destacado: true, badges: ['EN DESARROLLO'], imagen: 'punto-centro.jpg' },
   { id: 'la-florida', nombre: 'La Florida', categoria: 'retail', size: 'hero-lg', destacado: true, badges: ['AMPLIACIÓN'], imagen: 'centro-comercial-la-florda.jpg' },
   { id: 'mapocho', nombre: 'Mapocho', categoria: 'retail', size: 'standard', destacado: true, imagen: 'inmobiliaria-montecarlo.png', bgPos: 'center top' },
   { id: 'huerfanos', nombre: 'Huérfanos', categoria: 'retail', size: 'standard', destacado: true, imagen: 'Local huerfanos.JPG', bgPos: 'center top' },
@@ -500,7 +499,6 @@ let currentFilter = 'destacados';
 
 const filterTabs = [
   { key: 'destacados', label: 'Destacados' },
-  { key: 'centros-comerciales', label: 'Centros Comerciales' },
   { key: 'retail', label: 'Retail' },
   { key: 'residencial', label: 'Residencial' },
   { key: 'hoteleria', label: 'Hotelería' },
