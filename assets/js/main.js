@@ -464,7 +464,7 @@ const catConfig = {
   'hoteleria':    { label: 'HOTELERÍA',     bg: 'rgba(180,160,120,0.2)',  color: '#D4BC99' },
   'agricola':     { label: 'AGRÍCOLA',      bg: 'rgba(140,170,120,0.22)', color: '#A9C49A' },
   'energia':      { label: 'ENERGÍA',       bg: 'rgba(200,170,100,0.2)',  color: '#D4BC7A' },
-  'inversiones':  { label: 'INVERSIONES',   bg: 'rgba(170,140,180,0.22)', color: '#C5AACB' },
+  'private-equity': { label: 'PRIVATE EQUITY', bg: 'rgba(170,140,180,0.22)', color: '#C5AACB' },
 };
 
 const proyectos = [
@@ -482,7 +482,7 @@ const proyectos = [
   { id: 'concepcion', nombre: 'Edificio Concepción', categoria: 'residencial', size: 'standard', destacado: true, badges: ['PRÓXIMAMENTE'], imagen: null },
   { id: 'la-invernada', nombre: 'La Invernada', categoria: 'agricola', size: 'standard', destacado: true, imagen: 'la-invernada-agricultura.jpg' },
   { id: 'energia', nombre: 'Energía Renovable', categoria: 'energia', size: 'standard', destacado: true, imagen: 'energia-renovable.jpg' },
-  { id: 'valle-central', nombre: 'Alimentos Valle Central', categoria: 'inversiones', size: 'standard', destacado: true, imagen: null },
+  { id: 'valle-central', nombre: 'Alimentos Valle Central', categoria: 'private-equity', size: 'standard', destacado: true, imagen: null },
   { id: 'ismael-valdes', nombre: 'Local Ismael Valdés Vergara', categoria: 'retail', size: 'standard', destacado: false, imagen: null },
   { id: 'alameda', nombre: 'Alameda', categoria: 'retail', size: 'standard', destacado: false, imagen: null },
   { id: 'maipu', nombre: 'Maipú', categoria: 'retail', size: 'standard', destacado: false, imagen: null },
@@ -490,9 +490,9 @@ const proyectos = [
   { id: 'la-florida-10149', nombre: 'La Florida 10149', categoria: 'retail', size: 'standard', destacado: false, imagen: null },
   { id: 'fundo-montecarlo', nombre: 'Fundo Montecarlo', categoria: 'agricola', size: 'standard', destacado: false, imagen: null },
   { id: 'campo-lonquimay', nombre: 'Campo Lonquimay', categoria: 'agricola', size: 'standard', destacado: false, imagen: null },
-  { id: 'ceroplas', nombre: 'Ceroplas', categoria: 'inversiones', size: 'standard', destacado: false, imagen: null },
-  { id: 'wellnature', nombre: 'Wellnature', categoria: 'inversiones', size: 'standard', destacado: false, imagen: null },
-  { id: 'amatime', nombre: 'Amatime', categoria: 'inversiones', size: 'standard', destacado: false, imagen: null },
+  { id: 'ceroplas', nombre: 'Ceroplas', categoria: 'private-equity', size: 'standard', destacado: false, imagen: null },
+  { id: 'wellnature', nombre: 'Wellnature', categoria: 'private-equity', size: 'standard', destacado: false, imagen: null },
+  { id: 'amatime', nombre: 'Amatime', categoria: 'private-equity', size: 'standard', destacado: false, imagen: null },
 ];
 
 let currentFilter = 'destacados';
@@ -504,7 +504,7 @@ const filterTabs = [
   { key: 'hoteleria', label: 'Hotelería' },
   { key: 'agricola', label: 'Agrícola' },
   { key: 'energia', label: 'Energía' },
-  { key: 'inversiones', label: 'Inversiones' },
+  { key: 'private-equity', label: 'Private Equity' },
 ];
 
 function renderFilters() {
