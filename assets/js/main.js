@@ -135,9 +135,9 @@ const i18n = {
     'nav.about': 'Nosotros',
     'nav.contact': 'Contacto',
     // Hero
-    'hero.subtitle': 'Valcan Inversiones',
-    'hero.title': 'Compromiso con<br>la Excelencia',
-    'hero.desc': 'Más de 40 años construyendo valor con un equipo multidisciplinario de clase mundial en Real Estate, Energía, Agrícola, Salud y Alimentos.',
+    'hero.subtitle': 'Grupo Valcan',
+    'hero.title': 'MÁS DE 60 AÑOS CREANDO VALOR',
+    'hero.sub': 'Inversiones en Chile y Estados Unidos',
     'hero.btn': 'Conoce nuestros rubros',
     // Rubros
     'rubros.label': 'Nuestros Rubros',
@@ -283,9 +283,9 @@ const i18n = {
     'nav.about': 'About Us',
     'nav.contact': 'Contact',
     // Hero
-    'hero.subtitle': 'Valcan Inversiones',
-    'hero.title': 'Commitment to<br>Excellence',
-    'hero.desc': 'Over 40 years building value with a world-class multidisciplinary team in Real Estate, Energy, Agriculture, Health and Food.',
+    'hero.subtitle': 'Grupo Valcan',
+    'hero.title': 'MORE THAN 60 YEARS CREATING VALUE',
+    'hero.sub': 'Investments in Chile and the United States',
     'hero.btn': 'Discover our sectors',
     // Rubros
     'rubros.label': 'Our Sectors',
