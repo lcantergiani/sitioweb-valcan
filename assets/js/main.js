@@ -455,3 +455,119 @@ const savedLang = localStorage.getItem('valcan_lang');
 if (savedLang && savedLang !== 'es') {
   setLanguage(savedLang);
 }
+
+// ===== PORTAFOLIO DATA-DRIVEN =====
+
+const catConfig = {
+  'centros-comerciales': { label: 'CENTRO COMERCIAL', bg: 'rgba(35,189,187,0.9)', color: '#0F6E56' },
+  'retail':       { label: 'RETAIL',        bg: 'rgba(35,189,187,0.9)',  color: '#0F6E56' },
+  'residencial':  { label: 'RESIDENCIAL',   bg: 'rgba(127,119,221,0.9)', color: 'white' },
+  'hoteleria':    { label: 'HOTELERÍA',     bg: 'rgba(239,159,39,0.9)',  color: 'white' },
+  'agricola':     { label: 'AGRÍCOLA',      bg: 'rgba(151,196,89,0.9)',  color: '#1a3a0a' },
+  'energia':      { label: 'ENERGÍA',       bg: 'rgba(239,159,39,0.9)',  color: 'white' },
+  'inversiones':  { label: 'INVERSIONES',   bg: 'rgba(244,192,209,0.9)', color: '#5a1a3a' },
+};
+
+const proyectos = [
+  { id: 'quilicura', nombre: 'Punto Centro Quilicura', categoria: 'centros-comerciales', size: 'hero-xl', destacado: true, badges: ['EN DESARROLLO'], imagen: 'punto-centro.jpg' },
+  { id: 'la-florida', nombre: 'La Florida', categoria: 'retail', size: 'hero-lg', destacado: true, badges: ['AMPLIACIÓN'], imagen: 'centro-comercial-la-florda.jpg' },
+  { id: 'mapocho', nombre: 'Mapocho', categoria: 'retail', size: 'standard', destacado: true, imagen: 'inmobiliaria-montecarlo.png', bgPos: 'center top' },
+  { id: 'huerfanos', nombre: 'Huérfanos', categoria: 'retail', size: 'standard', destacado: true, imagen: 'Local huerfanos.JPG', bgPos: 'center top' },
+  { id: 'hilton', nombre: 'Hotel Hilton', categoria: 'hoteleria', size: 'hero-lg', destacado: true, badges: ['EN DESARROLLO'], imagen: 'hilton.jpg' },
+  { id: 'pajaritos', nombre: 'Pajaritos', categoria: 'retail', size: 'standard', destacado: true, imagen: 'Local Pajaritos.JPG', bgPos: 'center top' },
+  { id: 'cantagallo', nombre: 'Cantagallo', categoria: 'retail', size: 'standard', destacado: true, imagen: 'Local Cantagallo.JPG', bgPos: 'center top' },
+  { id: 'ciudad-satelite', nombre: 'Ciudad Satélite', categoria: 'retail', size: 'standard', destacado: true, imagen: 'Local Ciudad Satelite.JPG', bgPos: 'center top' },
+  { id: 'mirador', nombre: 'Mirador Santa Anita', categoria: 'residencial', size: 'standard', destacado: true, imagen: 'mirador-santa-anita.jpg', bgPos: 'center top' },
+  { id: 'gran-santiago', nombre: 'Edificio Gran Santiago', categoria: 'residencial', size: 'standard', destacado: true, imagen: 'edificio-gran-santiago.jpg' },
+  { id: 'los-leones', nombre: 'Edificio Los Leones', categoria: 'residencial', size: 'standard', destacado: true, imagen: 'edificio-los-leones.jpg' },
+  { id: 'concepcion', nombre: 'Edificio Concepción', categoria: 'residencial', size: 'standard', destacado: true, badges: ['PRÓXIMAMENTE'], imagen: null },
+  { id: 'la-invernada', nombre: 'La Invernada', categoria: 'agricola', size: 'standard', destacado: true, imagen: 'la-invernada-agricultura.jpg' },
+  { id: 'energia', nombre: 'Energía Renovable', categoria: 'energia', size: 'standard', destacado: true, imagen: 'energia-renovable.jpg' },
+  { id: 'valle-central', nombre: 'Alimentos Valle Central', categoria: 'inversiones', size: 'standard', destacado: true, imagen: null },
+  { id: 'ismael-valdes', nombre: 'Local Ismael Valdés Vergara', categoria: 'retail', size: 'standard', destacado: false, imagen: null },
+  { id: 'alameda', nombre: 'Alameda', categoria: 'retail', size: 'standard', destacado: false, imagen: null },
+  { id: 'maipu', nombre: 'Maipú', categoria: 'retail', size: 'standard', destacado: false, imagen: null },
+  { id: 'la-cisterna', nombre: 'La Cisterna', categoria: 'retail', size: 'standard', destacado: false, imagen: null },
+  { id: 'la-florida-10149', nombre: 'La Florida 10149', categoria: 'retail', size: 'standard', destacado: false, imagen: null },
+  { id: 'fundo-montecarlo', nombre: 'Fundo Montecarlo', categoria: 'agricola', size: 'standard', destacado: false, imagen: null },
+  { id: 'campo-lonquimay', nombre: 'Campo Lonquimay', categoria: 'agricola', size: 'standard', destacado: false, imagen: null },
+  { id: 'ceroplas', nombre: 'Ceroplas', categoria: 'inversiones', size: 'standard', destacado: false, imagen: null },
+  { id: 'wellnature', nombre: 'Wellnature', categoria: 'inversiones', size: 'standard', destacado: false, imagen: null },
+  { id: 'amatime', nombre: 'Amatime', categoria: 'inversiones', size: 'standard', destacado: false, imagen: null },
+];
+
+function renderPortfolio() {
+  const container = document.getElementById('bento-cards');
+  if (!container) return;
+
+  const items = proyectos.filter(p => p.destacado);
+  container.innerHTML = items.map(p => {
+    const cat = catConfig[p.categoria];
+    const isHeroXL = p.size === 'hero-xl';
+    const isHeroLG = p.size === 'hero-lg';
+    const isHero = isHeroXL || isHeroLG;
+    const hasImage = !!p.imagen;
+    const bgPos = p.bgPos || 'center';
+
+    // Determine card classes
+    const classes = ['portfolio-card'];
+    if (isHero) classes.push('bento-hero');
+    if (isHeroXL) classes.push('bento-hero--main');
+
+    // Determine min-height
+    let minHeight = '110px';
+    if (isHeroXL) minHeight = '320px';
+    else if (isHeroLG) minHeight = '150px';
+    else if (hasImage && (p.categoria === 'retail' || p.categoria === 'centros-comerciales')) minHeight = '220px';
+    else if (hasImage) minHeight = '160px';
+
+    // Grid span
+    const gridCol = isHero ? 'grid-column: span 2;' : '';
+    const gridRow = isHeroXL ? 'grid-row: span 2;' : '';
+
+    // Border
+    const border = isHero ? '1px solid rgba(255,255,255,0.12)' : '1px solid rgba(255,255,255,0.08)';
+
+    // Overlay gradient
+    const heroOverlay = 'linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.5) 40%, rgba(0,0,0,0.1) 75%, transparent 100%)';
+    const stdOverlay = 'linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 30%, transparent 60%)';
+    const overlay = isHero ? heroOverlay : stdOverlay;
+
+    // Badge HTML
+    const badgeSize = isHeroXL ? 'padding:4px 10px;font-size:11px;' : 'padding:3px 8px;font-size:10px;';
+    const catBadge = `<div style="background:${cat.bg};color:${cat.color};${badgeSize}border-radius:4px;font-weight:500;letter-spacing:0.5px;z-index:3;">${cat.label}</div>`;
+    const extraBadges = (p.badges || []).map(b =>
+      `<div style="background:rgba(239,159,39,0.95);color:white;${badgeSize}border-radius:4px;font-weight:500;letter-spacing:0.5px;z-index:3;${!isHero ? 'margin-left:auto;' : ''}">${b}</div>`
+    ).join('');
+
+    // Title style
+    const titleSize = isHeroXL ? '26px' : isHeroLG ? '18px' : '15px';
+    const titleStyle = `color:white;font-size:${titleSize};font-weight:500;text-shadow:0 1px 4px rgba(0,0,0,0.8);${isHeroXL ? 'line-height:1.2;' : ''}`;
+
+    if (hasImage) {
+      // Card with image
+      const contentPad = isHeroXL ? '1.5rem' : isHeroLG ? '1.25rem' : '1rem';
+      const badgeWrap = isHero
+        ? `<div style="display:inline-flex;gap:8px;margin-bottom:${isHeroXL ? '12px' : '10px'};">${catBadge}${extraBadges}</div>`
+        : catBadge;
+
+      return `<div class="${classes.join(' ')}" style="${gridCol}${gridRow}border-radius:12px;position:relative;min-height:${minHeight};display:flex;flex-direction:column;justify-content:space-between;border:${border};overflow:hidden;">
+  <div style="position:absolute;inset:0;background-image:url('assets/images/${p.imagen}');background-size:cover;background-position:${bgPos};border-radius:12px;"></div>
+  <div style="position:absolute;inset:0;background:${overlay};border-radius:12px;"></div>
+  <div style="position:relative;z-index:2;padding:${contentPad};display:flex;flex-direction:column;justify-content:space-between;height:100%;">
+    ${badgeWrap}
+    <div style="${titleStyle}">${p.nombre}</div>
+  </div>
+</div>`;
+    } else {
+      // Card without image — solid background
+      const badgeRow = `<div style="display:flex;gap:8px;align-items:flex-start;">${catBadge}${extraBadges}</div>`;
+      return `<div class="${classes.join(' ')}" style="${gridCol}${gridRow}background:linear-gradient(135deg,#3a4a7a 0%,#2a3a6a 100%);border-radius:12px;padding:1rem;min-height:${minHeight};display:flex;flex-direction:column;justify-content:space-between;border:1px solid rgba(175,169,236,0.3);">
+    ${badgeRow}
+    <div style="${titleStyle}">${p.nombre}</div>
+</div>`;
+    }
+  }).join('\n');
+}
+
+renderPortfolio();
