@@ -12,6 +12,7 @@
   <style>
     .portfolio-card { transition: transform 0.2s ease, box-shadow 0.2s ease; cursor: pointer; }
     #bento-cards { transition: opacity 0.2s ease; }
+    @media (max-width: 1024px) { .bento-wrapper { padding: 0 1.5rem !important; } }
     .portfolio-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.3); }
     .mobile-only { display: none; }
     .desktop-only { display: inline; }
@@ -21,7 +22,8 @@
       .desktop-only { display: none !important; }
 
       /* Section padding */
-      .proyectos { padding: 2rem 1rem 2.5rem !important; }
+      .proyectos { padding: 2rem 0 2.5rem !important; }
+      .bento-wrapper { padding: 0 1rem !important; }
 
       /* Header */
       .bento-header { margin-bottom: 1.5rem !important; }
@@ -172,7 +174,8 @@
   </section>
 
   <!-- GRID PROYECTOS -->
-  <section class="proyectos" id="proyectos" style="padding: 4rem 1.5rem;">
+  <section class="proyectos" id="proyectos" style="padding: 4rem 0;">
+<div class="bento-wrapper" style="max-width: 1280px; margin: 0 auto; padding: 0 2rem; box-sizing: border-box;">
 <div class="bento-header" style="text-align: center; margin-bottom: 2.5rem;">
   <div class="bento-label" style="color: #23bdbb; font-size: 13px; letter-spacing: 3px; margin-bottom: 0.75rem;">PORTAFOLIO</div>
   <div class="bento-title" style="color: white; font-size: 36px; font-weight: 500; margin-bottom: 0.5rem;">Proyectos Destacados</div>
@@ -180,13 +183,14 @@
 </div>
 <div class="bento-filters" id="bento-filters" style="display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin-top: 2rem; margin-bottom: 2rem;">
 </div>
-<div class="bento-grid" id="bento-cards" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; max-width: 1280px; margin: 0 auto;">
+<div class="bento-grid" id="bento-cards" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px;">
 </div>
-<div class="bento-stats" style="margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; max-width: 1000px; margin-left: auto; margin-right: auto;">
+<div class="bento-stats" style="margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; max-width: 1000px; margin: 0 auto;">
   <div class="bento-stat" style="text-align: center;"><div class="bento-stat__num" style="color: #23bdbb; font-size: 32px; font-weight: 500; line-height: 1;">+2 MM</div><div class="bento-stat__label" style="color: #B5D4F4; font-size: 11px; text-shadow: 0 1px 3px rgba(0,0,0,0.7); margin-top: 8px; letter-spacing: 1px;"><span class="desktop-only">M² EN RETAIL</span><span class="mobile-only">M² EN RETAIL</span></div></div>
   <div class="bento-stat" style="text-align: center;"><div class="bento-stat__num" style="color: #23bdbb; font-size: 32px; font-weight: 500; line-height: 1;">+1.500</div><div class="bento-stat__label" style="color: #B5D4F4; font-size: 11px; text-shadow: 0 1px 3px rgba(0,0,0,0.7); margin-top: 8px; letter-spacing: 1px;"><span class="desktop-only">UNIDADES RESIDENCIALES</span><span class="mobile-only">UNIDADES RESID.</span></div></div>
   <div class="bento-stat" style="text-align: center;"><div class="bento-stat__num" style="color: #23bdbb; font-size: 32px; font-weight: 500; line-height: 1;">+50</div><div class="bento-stat__label" style="color: #B5D4F4; font-size: 11px; text-shadow: 0 1px 3px rgba(0,0,0,0.7); margin-top: 8px; letter-spacing: 1px;"><span class="desktop-only">EMPRESAS EN PORTAFOLIO</span><span class="mobile-only">EMPRESAS</span></div></div>
   <div class="bento-stat" style="text-align: center;"><div class="bento-stat__num" style="color: #23bdbb; font-size: 32px; font-weight: 500; line-height: 1;">60+</div><div class="bento-stat__label" style="color: #B5D4F4; font-size: 11px; text-shadow: 0 1px 3px rgba(0,0,0,0.7); margin-top: 8px; letter-spacing: 1px;"><span class="desktop-only">AÑOS DE EXPERIENCIA</span><span class="mobile-only">AÑOS</span></div></div>
+</div>
 </div>
   </section>
 
