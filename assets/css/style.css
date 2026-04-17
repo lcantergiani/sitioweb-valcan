@@ -743,7 +743,7 @@ body {
   top: 0;
   bottom: 0;
   width: 2px;
-  background: rgba(93, 202, 165, 0.4);
+  background: rgba(35, 189, 187, 0.4);
 }
 
 /* Cada hito: mobile-first como columna izquierda */
@@ -778,8 +778,8 @@ body {
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background: #5DCAA5;
-  box-shadow: 0 0 0 4px rgba(93, 202, 165, 0.2), 0 0 0 8px rgba(93, 202, 165, 0.08);
+  background: #23bdbb;
+  box-shadow: 0 0 0 4px rgba(35, 189, 187, 0.2), 0 0 0 8px rgba(35, 189, 187, 0.08);
   flex-shrink: 0;
   z-index: 2;
   position: relative;
@@ -789,7 +789,7 @@ body {
 .timeline__item--founder .timeline__dot {
   width: 20px;
   height: 20px;
-  box-shadow: 0 0 0 5px rgba(93, 202, 165, 0.25), 0 0 0 10px rgba(93, 202, 165, 0.1);
+  box-shadow: 0 0 0 5px rgba(35, 189, 187, 0.25), 0 0 0 10px rgba(35, 189, 187, 0.1);
 }
 
 /* Dot presente */
@@ -810,7 +810,7 @@ body {
   display: block;
   font-size: 18.7px;
   font-weight: 500;
-  color: #5DCAA5;
+  color: #23bdbb;
   margin-bottom: 0.25rem;
 }
 
