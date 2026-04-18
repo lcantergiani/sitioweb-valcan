@@ -468,27 +468,27 @@ const catConfig = {
 };
 
 const proyectos = [
-  // FILA 1 – En Desarrollo (6+4=10)
-  { id: 'quilicura', nombre: 'Punto Centro Quilicura', categoria: 'retail', col: 6, row: 2, destacado: true, badges: ['EN DESARROLLO'], imagen: 'punto-centro.jpg' },
-  { id: 'hilton', nombre: 'Hotel Hilton', categoria: 'hoteleria', col: 4, row: 2, destacado: true, badges: ['EN DESARROLLO'], imagen: 'hotel hilton.jpg' },
-  // FILA 2 (5+5=10)
-  { id: 'mapocho', nombre: 'Mapocho', categoria: 'retail', col: 5, minH: '340px', destacado: true, imagen: 'inmobiliaria-montecarlo.png', bgPos: 'center' },
-  { id: 'huerfanos', nombre: 'Huérfanos', categoria: 'retail', col: 5, minH: '340px', destacado: true, imagen: 'Local huerfanos.JPG', bgPos: 'center' },
-  // FILA 3 (5+5=10)
-  { id: 'la-florida', nombre: 'La Florida', categoria: 'retail', col: 5, destacado: true, imagen: 'centro-comercial-la-florda.jpg' },
-  { id: 'cantagallo', nombre: 'Cantagallo', categoria: 'retail', col: 5, destacado: true, imagen: 'Local Cantagallo.JPG' },
-  // FILA 4 (5+5=10)
-  { id: 'pajaritos', nombre: 'Pajaritos', categoria: 'retail', col: 5, destacado: true, imagen: 'Local Pajaritos.JPG' },
-  { id: 'ciudad-satelite', nombre: 'Ciudad Satélite', categoria: 'retail', col: 5, destacado: true, imagen: 'Local Ciudad Satelite.JPG' },
-  // FILA 5 – Residencial (3+2+4+3 → se distribuye en 10 cols, 2 se van a siguiente fila)
+  // FILA 1 – En Desarrollo (7+5=12)
+  { id: 'quilicura', nombre: 'Punto Centro Quilicura', categoria: 'retail', col: 7, row: 2, destacado: true, badges: ['EN DESARROLLO'], imagen: 'punto-centro.jpg' },
+  { id: 'hilton', nombre: 'Hotel Hilton', categoria: 'hoteleria', col: 5, row: 2, destacado: true, badges: ['EN DESARROLLO'], imagen: 'hotel hilton.jpg' },
+  // FILA 2 (6+6=12)
+  { id: 'mapocho', nombre: 'Mapocho', categoria: 'retail', col: 6, minH: '340px', destacado: true, imagen: 'inmobiliaria-montecarlo.png', bgPos: 'center' },
+  { id: 'huerfanos', nombre: 'Huérfanos', categoria: 'retail', col: 6, minH: '340px', destacado: true, imagen: 'Local huerfanos.JPG', bgPos: 'center' },
+  // FILA 3 (6+6=12)
+  { id: 'la-florida', nombre: 'La Florida', categoria: 'retail', col: 6, destacado: true, imagen: 'centro-comercial-la-florda.jpg' },
+  { id: 'cantagallo', nombre: 'Cantagallo', categoria: 'retail', col: 6, destacado: true, imagen: 'Local Cantagallo.JPG' },
+  // FILA 4 (6+6=12)
+  { id: 'pajaritos', nombre: 'Pajaritos', categoria: 'retail', col: 6, destacado: true, imagen: 'Local Pajaritos.JPG' },
+  { id: 'ciudad-satelite', nombre: 'Ciudad Satélite', categoria: 'retail', col: 6, destacado: true, imagen: 'Local Ciudad Satelite.JPG' },
+  // FILA 5 – Residencial (3+4+2+3=12)
   { id: 'mirador', nombre: 'Mirador Santa Anita', categoria: 'residencial', col: 3, minH: '380px', destacado: true, imagen: 'mirador-santa-anita.jpg' },
-  { id: 'gran-santiago', nombre: 'Edificio Gran Santiago', categoria: 'residencial', col: 2, minH: '380px', destacado: true, imagen: 'edificio-gran-santiago.jpg' },
-  { id: 'los-leones', nombre: 'Edificio Los Leones', categoria: 'residencial', col: 4, minH: '380px', destacado: true, imagen: 'edificio-los-leones.jpg' },
+  { id: 'gran-santiago', nombre: 'Edificio Gran Santiago', categoria: 'residencial', col: 4, minH: '380px', destacado: true, imagen: 'edificio-gran-santiago.jpg' },
+  { id: 'los-leones', nombre: 'Edificio Los Leones', categoria: 'residencial', col: 2, minH: '380px', destacado: true, imagen: 'edificio-los-leones.jpg' },
   { id: 'concepcion', nombre: 'Edificio Concepción', categoria: 'residencial', col: 3, minH: '380px', destacado: true, imagen: 'Edificio Concepcion.jpg' },
-  // FILA 6 – Diversificación (4+3+3=10)
+  // FILA 6 – Diversificación (4+4+4=12)
   { id: 'la-invernada', nombre: 'La Invernada', categoria: 'agricola', col: 4, destacado: true, imagen: 'la-invernada-agricultura.jpg' },
-  { id: 'energia', nombre: 'Energía Renovable', categoria: 'energia', col: 3, destacado: true, imagen: 'energia-renovable.jpg' },
-  { id: 'valle-central', nombre: 'Alimentos Valle Central', categoria: 'private-equity', col: 3, destacado: true, imagen: 'pe-banner.png' },
+  { id: 'energia', nombre: 'Energía Renovable', categoria: 'energia', col: 4, destacado: true, imagen: 'energia-renovable.jpg' },
+  { id: 'valle-central', nombre: 'Alimentos Valle Central', categoria: 'private-equity', col: 4, destacado: true, imagen: 'pe-banner.png' },
   // No destacados
   { id: 'ismael-valdes', nombre: 'Local Ismael Valdés Vergara', categoria: 'retail', destacado: false, imagen: null },
   { id: 'alameda', nombre: 'Alameda', categoria: 'retail', destacado: false, imagen: null },
