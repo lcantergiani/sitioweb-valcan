@@ -482,7 +482,7 @@ const proyectos = [
   { id: 'concepcion', nombre: 'Edificio Concepción', categoria: 'residencial', size: 'standard', destacado: true, badges: ['PRÓXIMAMENTE'], imagen: null },
   { id: 'la-invernada', nombre: 'La Invernada', categoria: 'agricola', size: 'standard', destacado: true, imagen: 'la-invernada-agricultura.jpg' },
   { id: 'energia', nombre: 'Energía Renovable', categoria: 'energia', size: 'standard', destacado: true, imagen: 'energia-renovable.jpg' },
-  { id: 'valle-central', nombre: 'Alimentos Valle Central', categoria: 'private-equity', size: 'standard', destacado: true, imagen: null },
+  { id: 'valle-central', nombre: 'Alimentos Valle Central', categoria: 'private-equity', size: 'standard', destacado: true, imagen: 'pe-banner.png' },
   { id: 'ismael-valdes', nombre: 'Local Ismael Valdés Vergara', categoria: 'retail', size: 'standard', destacado: false, imagen: null },
   { id: 'alameda', nombre: 'Alameda', categoria: 'retail', size: 'standard', destacado: false, imagen: null },
   { id: 'maipu', nombre: 'Maipú', categoria: 'retail', size: 'standard', destacado: false, imagen: null },
