@@ -493,6 +493,7 @@ const proyectos = [
   { id: 'ceroplas', nombre: 'Ceroplas', categoria: 'private-equity', size: 'standard', destacado: false, imagen: null },
   { id: 'wellnature', nombre: 'Wellnature', categoria: 'private-equity', size: 'standard', destacado: false, imagen: null },
   { id: 'amatime', nombre: 'Amatime', categoria: 'private-equity', size: 'standard', destacado: false, imagen: null },
+  { id: 'multimedical', nombre: 'Multimedical', categoria: 'private-equity', size: 'standard', destacado: false, imagen: null },
 ];
 
 let currentFilter = 'destacados';
@@ -589,7 +590,7 @@ function renderPortfolio() {
     const badgeStyle = 'padding:4px 11px;font-size:11px;border-radius:4px;font-weight:500;letter-spacing:0.5px;text-transform:uppercase;z-index:3;';
     const catBadge = `<div style="background:${cat.bg};color:${cat.color};${badgeStyle}align-self:flex-start;display:inline-block;">${cat.label}</div>`;
     const extraBadges = (p.badges || []).map(b =>
-      `<div style="background:rgba(218,165,32,0.15);color:#D4A54C;border:1px solid rgba(218,165,32,0.35);${badgeStyle}${!isHero ? 'margin-left:auto;' : ''}">${b}</div>`
+      `<div style="background:rgba(255,255,255,0.95);color:#1e3a6f;${badgeStyle}${!isHero ? 'margin-left:auto;' : ''}">${b}</div>`
     ).join('');
 
     // Title style
