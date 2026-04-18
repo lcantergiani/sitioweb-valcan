@@ -479,7 +479,7 @@ const proyectos = [
   { id: 'mirador', nombre: 'Mirador Santa Anita', categoria: 'residencial', size: 'standard', destacado: true, imagen: 'mirador-santa-anita.jpg', bgPos: 'center top' },
   { id: 'gran-santiago', nombre: 'Edificio Gran Santiago', categoria: 'residencial', size: 'standard', destacado: true, imagen: 'edificio-gran-santiago.jpg' },
   { id: 'los-leones', nombre: 'Edificio Los Leones', categoria: 'residencial', size: 'standard', destacado: true, imagen: 'edificio-los-leones.jpg' },
-  { id: 'concepcion', nombre: 'Edificio Concepción', categoria: 'residencial', size: 'standard', destacado: true, badges: ['PRÓXIMAMENTE'], imagen: null },
+  { id: 'concepcion', nombre: 'Edificio Concepción', categoria: 'residencial', size: 'standard', destacado: true, imagen: 'Edificio Concepcion.jpg' },
   { id: 'la-invernada', nombre: 'La Invernada', categoria: 'agricola', size: 'standard', destacado: true, imagen: 'la-invernada-agricultura.jpg' },
   { id: 'energia', nombre: 'Energía Renovable', categoria: 'energia', size: 'standard', destacado: true, imagen: 'energia-renovable.jpg' },
   { id: 'valle-central', nombre: 'Alimentos Valle Central', categoria: 'private-equity', size: 'standard', destacado: true, imagen: 'pe-banner.png' },
