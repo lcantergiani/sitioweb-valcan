@@ -468,21 +468,27 @@ const catConfig = {
 };
 
 const proyectos = [
-  { id: 'quilicura', nombre: 'Punto Centro Quilicura', categoria: 'retail', ar: '1/1', hero: true, destacado: true, badges: ['EN DESARROLLO'], imagen: 'punto-centro.jpg' },
-  { id: 'hilton', nombre: 'Hotel Hilton', categoria: 'hoteleria', ar: '3/5', destacado: true, badges: ['EN DESARROLLO'], imagen: 'hotel hilton.jpg' },
-  { id: 'mapocho', nombre: 'Mapocho', categoria: 'retail', ar: '4/3', destacado: true, imagen: 'inmobiliaria-montecarlo.png' },
-  { id: 'huerfanos', nombre: 'Huérfanos', categoria: 'retail', ar: '4/3', destacado: true, imagen: 'Local huerfanos.JPG' },
-  { id: 'la-florida', nombre: 'La Florida', categoria: 'retail', ar: '16/9', destacado: true, badges: ['AMPLIACIÓN'], imagen: 'centro-comercial-la-florda.jpg' },
-  { id: 'pajaritos', nombre: 'Pajaritos', categoria: 'retail', ar: '4/3', destacado: true, imagen: 'Local Pajaritos.JPG' },
-  { id: 'ciudad-satelite', nombre: 'Ciudad Satélite', categoria: 'retail', ar: '4/3', destacado: true, imagen: 'Local Ciudad Satelite.JPG' },
-  { id: 'cantagallo', nombre: 'Cantagallo', categoria: 'retail', ar: '16/9', destacado: true, imagen: 'Local Cantagallo.JPG' },
-  { id: 'mirador', nombre: 'Mirador Santa Anita', categoria: 'residencial', ar: '1/1', destacado: true, imagen: 'mirador-santa-anita.jpg' },
-  { id: 'gran-santiago', nombre: 'Edificio Gran Santiago', categoria: 'residencial', ar: '1/1', destacado: true, imagen: 'edificio-gran-santiago.jpg' },
-  { id: 'los-leones', nombre: 'Edificio Los Leones', categoria: 'residencial', ar: '1/1', destacado: true, imagen: 'edificio-los-leones.jpg' },
-  { id: 'concepcion', nombre: 'Edificio Concepción', categoria: 'residencial', ar: '1/1', destacado: true, imagen: 'Edificio Concepcion.jpg' },
-  { id: 'la-invernada', nombre: 'La Invernada', categoria: 'agricola', ar: '4/3', destacado: true, imagen: 'la-invernada-agricultura.jpg' },
-  { id: 'energia', nombre: 'Energía Renovable', categoria: 'energia', ar: '4/3', destacado: true, imagen: 'energia-renovable.jpg' },
-  { id: 'valle-central', nombre: 'Alimentos Valle Central', categoria: 'private-equity', ar: '4/3', destacado: true, imagen: 'pe-banner.png' },
+  // FILA 1 – En Desarrollo
+  { id: 'quilicura', nombre: 'Punto Centro Quilicura', categoria: 'retail', col: 3, row: 2, destacado: true, badges: ['EN DESARROLLO'], imagen: 'punto-centro.jpg' },
+  { id: 'hilton', nombre: 'Hotel Hilton', categoria: 'hoteleria', col: 1, row: 2, destacado: true, badges: ['EN DESARROLLO'], imagen: 'hotel hilton.jpg' },
+  // FILA 2
+  { id: 'mapocho', nombre: 'Mapocho', categoria: 'retail', col: 2, destacado: true, imagen: 'inmobiliaria-montecarlo.png' },
+  { id: 'huerfanos', nombre: 'Huérfanos', categoria: 'retail', col: 2, destacado: true, imagen: 'Local huerfanos.JPG' },
+  // FILA 3
+  { id: 'la-florida', nombre: 'La Florida', categoria: 'retail', col: 2, destacado: true, badges: ['AMPLIACIÓN'], imagen: 'centro-comercial-la-florda.jpg' },
+  { id: 'cantagallo', nombre: 'Cantagallo', categoria: 'retail', col: 2, destacado: true, imagen: 'Local Cantagallo.JPG' },
+  // FILA 4
+  { id: 'pajaritos', nombre: 'Pajaritos', categoria: 'retail', col: 2, destacado: true, imagen: 'Local Pajaritos.JPG' },
+  { id: 'ciudad-satelite', nombre: 'Ciudad Satélite', categoria: 'retail', col: 2, destacado: true, imagen: 'Local Ciudad Satelite.JPG' },
+  // FILA 5 – Residencial
+  { id: 'mirador', nombre: 'Mirador Santa Anita', categoria: 'residencial', destacado: true, imagen: 'mirador-santa-anita.jpg' },
+  { id: 'gran-santiago', nombre: 'Edificio Gran Santiago', categoria: 'residencial', destacado: true, imagen: 'edificio-gran-santiago.jpg' },
+  { id: 'los-leones', nombre: 'Edificio Los Leones', categoria: 'residencial', destacado: true, imagen: 'edificio-los-leones.jpg' },
+  { id: 'concepcion', nombre: 'Edificio Concepción', categoria: 'residencial', destacado: true, imagen: 'Edificio Concepcion.jpg' },
+  // FILA 6 – Diversificación
+  { id: 'la-invernada', nombre: 'La Invernada', categoria: 'agricola', destacado: true, imagen: 'la-invernada-agricultura.jpg' },
+  { id: 'energia', nombre: 'Energía Renovable', categoria: 'energia', destacado: true, imagen: 'energia-renovable.jpg' },
+  { id: 'valle-central', nombre: 'Alimentos Valle Central', categoria: 'private-equity', destacado: true, imagen: 'pe-banner.png' },
   // No destacados
   { id: 'ismael-valdes', nombre: 'Local Ismael Valdés Vergara', categoria: 'retail', destacado: false, imagen: null },
   { id: 'alameda', nombre: 'Alameda', categoria: 'retail', destacado: false, imagen: null },
@@ -558,11 +564,17 @@ function renderPortfolio() {
   container.innerHTML = items.map(p => {
     const cat = catConfig[p.categoria];
     const hasImage = !!p.imagen;
-    const isHero = !!p.hero;
-    const aspectRatio = p.ar || '4/3';
+    const col = p.col || 1;
+    const row = p.row || 1;
+    const isHero = row > 1;
 
     // Grid span
-    const gridSpan = isHero ? 'grid-column: span 2; grid-row: span 2;' : '';
+    const gridCol = col > 1 ? 'grid-column: span ' + col + ';' : '';
+    const gridRow = row > 1 ? 'grid-row: span ' + row + ';' : '';
+    const heroClass = isHero ? ' portfolio-hero' : '';
+
+    // Min-height
+    const minHeight = isHero ? '0' : '220px';
 
     // Badge HTML
     const badgeStyle = 'padding:4px 11px;font-size:11px;border-radius:4px;font-weight:500;letter-spacing:0.5px;text-transform:uppercase;z-index:3;';
@@ -581,11 +593,12 @@ function renderPortfolio() {
     const titleStyle = `color:white;font-size:${titleSize};font-weight:500;text-shadow:0 1px 4px rgba(0,0,0,0.8);`;
     const titleClass = 'card-title';
     const contentPad = isHero ? '1.5rem' : '1rem';
+    const border = isHero ? '1px solid rgba(255,255,255,0.12)' : '1px solid rgba(255,255,255,0.08)';
 
     if (hasImage) {
       const badgeWrap = `<div style="display:inline-flex;gap:8px;">${catBadge}${extraBadges}</div>`;
 
-      return `<div class="portfolio-card" style="${gridSpan}border-radius:12px;position:relative;aspect-ratio:${aspectRatio};border:1px solid rgba(255,255,255,${isHero ? '0.12' : '0.08'});overflow:hidden;">
+      return `<div class="portfolio-card${heroClass}" style="${gridCol}${gridRow}border-radius:12px;position:relative;min-height:${minHeight};border:${border};overflow:hidden;">
   <div style="position:absolute;inset:0;background-image:url('assets/images/${p.imagen}');background-size:cover;background-position:center;border-radius:12px;"></div>
   <div style="position:absolute;inset:0;background:${overlay};border-radius:12px;"></div>
   <div style="position:relative;z-index:2;padding:${contentPad};display:flex;flex-direction:column;justify-content:space-between;height:100%;box-sizing:border-box;">
@@ -595,7 +608,7 @@ function renderPortfolio() {
 </div>`;
     } else {
       const badgeRow = `<div style="display:flex;gap:8px;align-items:flex-start;">${catBadge}${extraBadges}</div>`;
-      return `<div class="portfolio-card" style="${gridSpan}background:linear-gradient(135deg,#3a4a7a 0%,#2a3a6a 100%);border-radius:12px;padding:1rem;aspect-ratio:${aspectRatio};display:flex;flex-direction:column;justify-content:space-between;border:1px solid rgba(175,169,236,0.3);box-sizing:border-box;">
+      return `<div class="portfolio-card${heroClass}" style="${gridCol}${gridRow}background:linear-gradient(135deg,#3a4a7a 0%,#2a3a6a 100%);border-radius:12px;padding:1rem;min-height:${minHeight};display:flex;flex-direction:column;justify-content:space-between;border:1px solid rgba(175,169,236,0.3);box-sizing:border-box;">
     ${badgeRow}
     <div class="${titleClass}" style="${titleStyle}">${p.nombre}</div>
 </div>`;

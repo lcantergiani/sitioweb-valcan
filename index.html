@@ -15,6 +15,8 @@
     @media (max-width: 1024px) {
       .bento-wrapper { padding: 0 3rem !important; }
       .bento-grid { grid-template-columns: repeat(2, 1fr) !important; }
+      .portfolio-card { grid-column: span 1 !important; grid-row: span 1 !important; }
+      .portfolio-card.portfolio-hero { grid-column: span 2 !important; grid-row: span 2 !important; }
     }
     @media (max-width: 640px) {
       .bento-grid { grid-template-columns: 1fr !important; }
@@ -185,7 +187,7 @@
 </div>
 <div class="bento-filters" id="bento-filters" style="display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin-top: 2rem; margin-bottom: 2rem;">
 </div>
-<div class="bento-grid" id="bento-cards" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px;">
+<div class="bento-grid" id="bento-cards" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px;">
 </div>
 <div class="bento-stats" style="margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; max-width: 1000px; margin: 0 auto;">
   <div class="bento-stat" style="text-align: center;"><div class="bento-stat__num" style="color: #23bdbb; font-size: 32px; font-weight: 500; line-height: 1;">+2 MM</div><div class="bento-stat__label" style="color: #B5D4F4; font-size: 11px; text-shadow: 0 1px 3px rgba(0,0,0,0.7); margin-top: 8px; letter-spacing: 1px;"><span class="desktop-only">M² EN RETAIL</span><span class="mobile-only">M² EN RETAIL</span></div></div>
