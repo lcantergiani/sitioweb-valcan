@@ -54,24 +54,23 @@
         font-size: 12px !important;
       }
 
-      /* Grid — 2 columns, heroes span both */
+      /* Grid — single column, all cards same size */
       .bento-grid {
-        grid-template-columns: repeat(2, 1fr) !important;
-        gap: 10px !important;
+        grid-template-columns: 1fr !important;
+        gap: 12px !important;
       }
 
-      /* Hero cards — full width */
-      .bento-hero {
-        grid-column: 1 / -1 !important;
-        grid-row: unset !important;
-        min-height: 140px !important;
+      /* All cards — uniform size, no hero distinction */
+      .portfolio-card {
+        grid-column: span 1 !important;
+        grid-row: span 1 !important;
+        min-height: 260px !important;
       }
-      .bento-hero--main { min-height: 260px !important; }
 
-      /* Standard cards */
-      .portfolio-card:not(.bento-hero) {
-        min-height: 95px !important;
-        padding: 0.85rem !important;
+      /* Uniform title size */
+      .card-title {
+        font-size: 22px !important;
+        line-height: 1.2 !important;
       }
 
       /* Stats */
@@ -201,7 +200,7 @@
       <h2 class="section__title" data-i18n="about.title">Quiénes Somos</h2>
       <div class="quienes__grid">
         <div class="quienes__img fade-up">
-          <img src="assets/images/inmobiliaria-montecarlo.png" alt="Inmobiliaria Montecarlo">
+          <img src="assets/images/Foto Nono.jpg" alt="Inmobiliaria Montecarlo">
         </div>
         <div class="quienes__text fade-up">
           <p data-i18n="about.p1">Los comienzos del grupo empresarial se remontan a los años 1965 cuando su fundador Valentín Cantergiani inaugura un local de alimento con el nombre de "Establecimientos Montecarlo" que tenía una superficie de 38m2 y dos trabajadores.</p>

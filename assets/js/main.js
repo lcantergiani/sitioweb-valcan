@@ -596,6 +596,7 @@ function renderPortfolio() {
     // Title style
     const titleSize = isHeroXL ? '26px' : isHeroLG ? '18px' : '15px';
     const titleStyle = `color:white;font-size:${titleSize};font-weight:500;text-shadow:0 1px 4px rgba(0,0,0,0.8);${isHeroXL ? 'line-height:1.2;' : ''}`;
+    const titleClass = 'card-title';
 
     if (hasImage) {
       // Card with image
@@ -609,7 +610,7 @@ function renderPortfolio() {
   <div style="position:absolute;inset:0;background:${overlay};border-radius:12px;"></div>
   <div style="position:relative;z-index:2;padding:${contentPad};display:flex;flex-direction:column;justify-content:space-between;height:100%;">
     ${badgeWrap}
-    <div style="${titleStyle}">${p.nombre}</div>
+    <div class="${titleClass}" style="${titleStyle}">${p.nombre}</div>
   </div>
 </div>`;
     } else {
@@ -617,7 +618,7 @@ function renderPortfolio() {
       const badgeRow = `<div style="display:flex;gap:8px;align-items:flex-start;">${catBadge}${extraBadges}</div>`;
       return `<div class="${classes.join(' ')}" style="${gridCol}${gridRow}background:linear-gradient(135deg,#3a4a7a 0%,#2a3a6a 100%);border-radius:12px;padding:1rem;min-height:${minHeight};display:flex;flex-direction:column;justify-content:space-between;border:1px solid rgba(175,169,236,0.3);">
     ${badgeRow}
-    <div style="${titleStyle}">${p.nombre}</div>
+    <div class="${titleClass}" style="${titleStyle}">${p.nombre}</div>
 </div>`;
     }
   }).join('\n');
