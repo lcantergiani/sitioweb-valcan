@@ -480,12 +480,11 @@ const proyectos = [
   // FILA 4 (5+5=10)
   { id: 'pajaritos', nombre: 'Pajaritos', categoria: 'retail', col: 5, destacado: true, imagen: 'Local Pajaritos.JPG' },
   { id: 'ciudad-satelite', nombre: 'Ciudad Satélite', categoria: 'retail', col: 5, destacado: true, imagen: 'Local Ciudad Satelite.JPG' },
-  // FILA 5a – Residencial (5+5=10)
-  { id: 'mirador', nombre: 'Mirador Santa Anita', categoria: 'residencial', col: 5, destacado: true, imagen: 'mirador-santa-anita.jpg' },
-  { id: 'gran-santiago', nombre: 'Edificio Gran Santiago', categoria: 'residencial', col: 5, destacado: true, imagen: 'edificio-gran-santiago.jpg' },
-  // FILA 5b – Residencial (5+5=10)
-  { id: 'los-leones', nombre: 'Edificio Los Leones', categoria: 'residencial', col: 5, destacado: true, imagen: 'edificio-los-leones.jpg' },
-  { id: 'concepcion', nombre: 'Edificio Concepción', categoria: 'residencial', col: 5, destacado: true, imagen: 'Edificio Concepcion.jpg' },
+  // FILA 5 – Residencial (3+2+3+2=10)
+  { id: 'mirador', nombre: 'Mirador Santa Anita', categoria: 'residencial', col: 3, minH: '380px', destacado: true, imagen: 'mirador-santa-anita.jpg' },
+  { id: 'gran-santiago', nombre: 'Edificio Gran Santiago', categoria: 'residencial', col: 2, minH: '380px', destacado: true, imagen: 'edificio-gran-santiago.jpg' },
+  { id: 'los-leones', nombre: 'Edificio Los Leones', categoria: 'residencial', col: 3, minH: '380px', destacado: true, imagen: 'edificio-los-leones.jpg' },
+  { id: 'concepcion', nombre: 'Edificio Concepción', categoria: 'residencial', col: 2, minH: '380px', destacado: true, imagen: 'Edificio Concepcion.jpg' },
   // FILA 6 – Diversificación (4+3+3=10)
   { id: 'la-invernada', nombre: 'La Invernada', categoria: 'agricola', col: 4, destacado: true, imagen: 'la-invernada-agricultura.jpg' },
   { id: 'energia', nombre: 'Energía Renovable', categoria: 'energia', col: 3, destacado: true, imagen: 'energia-renovable.jpg' },
