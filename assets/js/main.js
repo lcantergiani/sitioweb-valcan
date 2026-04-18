@@ -468,14 +468,14 @@ const catConfig = {
 };
 
 const proyectos = [
-  { id: 'quilicura', nombre: 'Punto Centro Quilicura', categoria: 'retail', ar: '16/10', destacado: true, badges: ['EN DESARROLLO'], imagen: 'punto-centro.jpg' },
+  { id: 'quilicura', nombre: 'Punto Centro Quilicura', categoria: 'retail', ar: '1/1', hero: true, destacado: true, badges: ['EN DESARROLLO'], imagen: 'punto-centro.jpg' },
   { id: 'hilton', nombre: 'Hotel Hilton', categoria: 'hoteleria', ar: '3/5', destacado: true, badges: ['EN DESARROLLO'], imagen: 'hotel hilton.jpg' },
   { id: 'mapocho', nombre: 'Mapocho', categoria: 'retail', ar: '4/3', destacado: true, imagen: 'inmobiliaria-montecarlo.png' },
   { id: 'huerfanos', nombre: 'Huérfanos', categoria: 'retail', ar: '4/3', destacado: true, imagen: 'Local huerfanos.JPG' },
   { id: 'la-florida', nombre: 'La Florida', categoria: 'retail', ar: '16/9', destacado: true, badges: ['AMPLIACIÓN'], imagen: 'centro-comercial-la-florda.jpg' },
   { id: 'pajaritos', nombre: 'Pajaritos', categoria: 'retail', ar: '4/3', destacado: true, imagen: 'Local Pajaritos.JPG' },
-  { id: 'cantagallo', nombre: 'Cantagallo', categoria: 'retail', ar: '16/9', destacado: true, imagen: 'Local Cantagallo.JPG' },
   { id: 'ciudad-satelite', nombre: 'Ciudad Satélite', categoria: 'retail', ar: '4/3', destacado: true, imagen: 'Local Ciudad Satelite.JPG' },
+  { id: 'cantagallo', nombre: 'Cantagallo', categoria: 'retail', ar: '16/9', destacado: true, imagen: 'Local Cantagallo.JPG' },
   { id: 'mirador', nombre: 'Mirador Santa Anita', categoria: 'residencial', ar: '1/1', destacado: true, imagen: 'mirador-santa-anita.jpg' },
   { id: 'gran-santiago', nombre: 'Edificio Gran Santiago', categoria: 'residencial', ar: '1/1', destacado: true, imagen: 'edificio-gran-santiago.jpg' },
   { id: 'los-leones', nombre: 'Edificio Los Leones', categoria: 'residencial', ar: '1/1', destacado: true, imagen: 'edificio-los-leones.jpg' },
@@ -558,7 +558,11 @@ function renderPortfolio() {
   container.innerHTML = items.map(p => {
     const cat = catConfig[p.categoria];
     const hasImage = !!p.imagen;
+    const isHero = !!p.hero;
     const aspectRatio = p.ar || '4/3';
+
+    // Grid span
+    const gridSpan = isHero ? 'grid-column: span 2; grid-row: span 2;' : '';
 
     // Badge HTML
     const badgeStyle = 'padding:4px 11px;font-size:11px;border-radius:4px;font-weight:500;letter-spacing:0.5px;text-transform:uppercase;z-index:3;';
@@ -568,26 +572,30 @@ function renderPortfolio() {
     ).join('');
 
     // Overlay gradient
-    const overlay = 'linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 30%, transparent 60%)';
+    const heroOverlay = 'linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.5) 40%, rgba(0,0,0,0.1) 75%, transparent 100%)';
+    const stdOverlay = 'linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 30%, transparent 60%)';
+    const overlay = isHero ? heroOverlay : stdOverlay;
 
     // Title style
-    const titleStyle = 'color:white;font-size:15px;font-weight:500;text-shadow:0 1px 4px rgba(0,0,0,0.8);';
+    const titleSize = isHero ? '22px' : '15px';
+    const titleStyle = `color:white;font-size:${titleSize};font-weight:500;text-shadow:0 1px 4px rgba(0,0,0,0.8);`;
     const titleClass = 'card-title';
+    const contentPad = isHero ? '1.5rem' : '1rem';
 
     if (hasImage) {
       const badgeWrap = `<div style="display:inline-flex;gap:8px;">${catBadge}${extraBadges}</div>`;
 
-      return `<div class="portfolio-card" style="display:inline-block;width:100%;margin-bottom:14px;break-inside:avoid;border-radius:12px;position:relative;aspect-ratio:${aspectRatio};border:1px solid rgba(255,255,255,0.08);overflow:hidden;">
+      return `<div class="portfolio-card" style="${gridSpan}border-radius:12px;position:relative;aspect-ratio:${aspectRatio};border:1px solid rgba(255,255,255,${isHero ? '0.12' : '0.08'});overflow:hidden;">
   <div style="position:absolute;inset:0;background-image:url('assets/images/${p.imagen}');background-size:cover;background-position:center;border-radius:12px;"></div>
   <div style="position:absolute;inset:0;background:${overlay};border-radius:12px;"></div>
-  <div style="position:relative;z-index:2;padding:1rem;display:flex;flex-direction:column;justify-content:space-between;height:100%;box-sizing:border-box;">
+  <div style="position:relative;z-index:2;padding:${contentPad};display:flex;flex-direction:column;justify-content:space-between;height:100%;box-sizing:border-box;">
     ${badgeWrap}
     <div class="${titleClass}" style="${titleStyle}">${p.nombre}</div>
   </div>
 </div>`;
     } else {
       const badgeRow = `<div style="display:flex;gap:8px;align-items:flex-start;">${catBadge}${extraBadges}</div>`;
-      return `<div class="portfolio-card" style="display:inline-block;width:100%;margin-bottom:14px;break-inside:avoid;background:linear-gradient(135deg,#3a4a7a 0%,#2a3a6a 100%);border-radius:12px;padding:1rem;aspect-ratio:${aspectRatio};display:flex;flex-direction:column;justify-content:space-between;border:1px solid rgba(175,169,236,0.3);box-sizing:border-box;">
+      return `<div class="portfolio-card" style="${gridSpan}background:linear-gradient(135deg,#3a4a7a 0%,#2a3a6a 100%);border-radius:12px;padding:1rem;aspect-ratio:${aspectRatio};display:flex;flex-direction:column;justify-content:space-between;border:1px solid rgba(175,169,236,0.3);box-sizing:border-box;">
     ${badgeRow}
     <div class="${titleClass}" style="${titleStyle}">${p.nombre}</div>
 </div>`;
