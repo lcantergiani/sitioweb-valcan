@@ -468,18 +468,23 @@ const catConfig = {
 };
 
 const proyectos = [
+  // FILA 1 – En Desarrollo
   { id: 'quilicura', nombre: 'Punto Centro Quilicura', categoria: 'retail', size: 'hero-xl', destacado: true, badges: ['EN DESARROLLO'], imagen: 'punto-centro.jpg' },
-  { id: 'la-florida', nombre: 'La Florida', categoria: 'retail', size: 'hero-lg', destacado: true, badges: ['AMPLIACIÓN'], imagen: 'centro-comercial-la-florda.jpg' },
-  { id: 'mapocho', nombre: 'Mapocho', categoria: 'retail', size: 'standard', destacado: true, imagen: 'inmobiliaria-montecarlo.png', bgPos: 'center top' },
-  { id: 'huerfanos', nombre: 'Huérfanos', categoria: 'retail', size: 'standard', destacado: true, imagen: 'Local huerfanos.JPG', bgPos: 'center top' },
   { id: 'hilton', nombre: 'Hotel Hilton', categoria: 'hoteleria', size: 'hero-tall', destacado: true, badges: ['EN DESARROLLO'], imagen: 'hotel hilton.jpg' },
+  // FILA 2 – Retail Emblemático
+  { id: 'mapocho', nombre: 'Mapocho', categoria: 'retail', size: 'hero-lg', destacado: true, imagen: 'inmobiliaria-montecarlo.png', bgPos: 'center top' },
+  { id: 'huerfanos', nombre: 'Huérfanos', categoria: 'retail', size: 'hero-lg', destacado: true, imagen: 'Local huerfanos.JPG', bgPos: 'center top' },
+  // FILA 3 – Retail Estándar
+  { id: 'la-florida', nombre: 'La Florida', categoria: 'retail', size: 'hero-lg', destacado: true, badges: ['AMPLIACIÓN'], imagen: 'centro-comercial-la-florda.jpg' },
   { id: 'pajaritos', nombre: 'Pajaritos', categoria: 'retail', size: 'standard', destacado: true, imagen: 'Local Pajaritos.JPG', bgPos: 'center top' },
-  { id: 'cantagallo', nombre: 'Cantagallo', categoria: 'retail', size: 'standard', destacado: true, imagen: 'Local Cantagallo.JPG', bgPos: 'center top' },
   { id: 'ciudad-satelite', nombre: 'Ciudad Satélite', categoria: 'retail', size: 'standard', destacado: true, imagen: 'Local Ciudad Satelite.JPG', bgPos: 'center top' },
-  { id: 'mirador', nombre: 'Mirador Santa Anita', categoria: 'residencial', size: 'standard', destacado: true, imagen: 'mirador-santa-anita.jpg', bgPos: 'center top' },
-  { id: 'gran-santiago', nombre: 'Edificio Gran Santiago', categoria: 'residencial', size: 'standard', destacado: true, imagen: 'edificio-gran-santiago.jpg' },
-  { id: 'los-leones', nombre: 'Edificio Los Leones', categoria: 'residencial', size: 'standard', destacado: true, imagen: 'edificio-los-leones.jpg' },
-  { id: 'concepcion', nombre: 'Edificio Concepción', categoria: 'residencial', size: 'standard', destacado: true, imagen: 'Edificio Concepcion.jpg' },
+  { id: 'cantagallo', nombre: 'Cantagallo', categoria: 'retail', size: 'hero-lg', destacado: true, imagen: 'Local Cantagallo.JPG', bgPos: 'center top' },
+  // FILA 4 – Residencial
+  { id: 'mirador', nombre: 'Mirador Santa Anita', categoria: 'residencial', size: 'compact', destacado: true, imagen: 'mirador-santa-anita.jpg', bgPos: 'center top' },
+  { id: 'gran-santiago', nombre: 'Edificio Gran Santiago', categoria: 'residencial', size: 'compact', destacado: true, imagen: 'edificio-gran-santiago.jpg' },
+  { id: 'los-leones', nombre: 'Edificio Los Leones', categoria: 'residencial', size: 'compact', destacado: true, imagen: 'edificio-los-leones.jpg' },
+  { id: 'concepcion', nombre: 'Edificio Concepción', categoria: 'residencial', size: 'compact', destacado: true, imagen: 'Edificio Concepcion.jpg' },
+  // FILA 5 – Diversificación
   { id: 'la-invernada', nombre: 'La Invernada', categoria: 'agricola', size: 'standard', destacado: true, imagen: 'la-invernada-agricultura.jpg' },
   { id: 'energia', nombre: 'Energía Renovable', categoria: 'energia', size: 'standard', destacado: true, imagen: 'energia-renovable.jpg' },
   { id: 'valle-central', nombre: 'Alimentos Valle Central', categoria: 'private-equity', size: 'standard', destacado: true, imagen: 'pe-banner.png' },
@@ -559,6 +564,7 @@ function renderPortfolio() {
     const isHeroXL = p.size === 'hero-xl';
     const isHeroLG = p.size === 'hero-lg';
     const isHeroTall = p.size === 'hero-tall';
+    const isCompact = p.size === 'compact';
     const isHero = isHeroXL || isHeroLG || isHeroTall;
     const hasImage = !!p.imagen;
     const bgPos = p.bgPos || 'center';
@@ -573,6 +579,7 @@ function renderPortfolio() {
     if (isHeroXL) minHeight = '320px';
     else if (isHeroTall) minHeight = '460px';
     else if (isHeroLG) minHeight = '150px';
+    else if (isCompact && hasImage) minHeight = '154px';
     else if (hasImage) minHeight = '220px';
 
     // Grid span
