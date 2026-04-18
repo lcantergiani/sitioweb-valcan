@@ -472,7 +472,7 @@ const proyectos = [
   { id: 'la-florida', nombre: 'La Florida', categoria: 'retail', size: 'hero-lg', destacado: true, badges: ['AMPLIACIÓN'], imagen: 'centro-comercial-la-florda.jpg' },
   { id: 'mapocho', nombre: 'Mapocho', categoria: 'retail', size: 'standard', destacado: true, imagen: 'inmobiliaria-montecarlo.png', bgPos: 'center top' },
   { id: 'huerfanos', nombre: 'Huérfanos', categoria: 'retail', size: 'standard', destacado: true, imagen: 'Local huerfanos.JPG', bgPos: 'center top' },
-  { id: 'hilton', nombre: 'Hotel Hilton', categoria: 'hoteleria', size: 'hero-tall', destacado: true, badges: ['EN DESARROLLO'], imagen: 'hilton.jpg' },
+  { id: 'hilton', nombre: 'Hotel Hilton', categoria: 'hoteleria', size: 'hero-tall', destacado: true, badges: ['EN DESARROLLO'], imagen: 'hotel hilton.jpg' },
   { id: 'pajaritos', nombre: 'Pajaritos', categoria: 'retail', size: 'standard', destacado: true, imagen: 'Local Pajaritos.JPG', bgPos: 'center top' },
   { id: 'cantagallo', nombre: 'Cantagallo', categoria: 'retail', size: 'standard', destacado: true, imagen: 'Local Cantagallo.JPG', bgPos: 'center top' },
   { id: 'ciudad-satelite', nombre: 'Ciudad Satélite', categoria: 'retail', size: 'standard', destacado: true, imagen: 'Local Ciudad Satelite.JPG', bgPos: 'center top' },
