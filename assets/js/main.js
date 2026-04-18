@@ -609,7 +609,7 @@ function renderPortfolio() {
         : catBadge;
 
       return `<div class="${classes.join(' ')}" style="${gridCol}${gridRow}border-radius:12px;position:relative;min-height:${minHeight};display:flex;flex-direction:column;justify-content:space-between;border:${border};overflow:hidden;">
-  <div style="position:absolute;inset:0;background-image:url('assets/images/${p.imagen}');background-size:cover;background-position:${bgPos};border-radius:12px;"></div>
+  <div style="position:absolute;inset:0;background-image:url('assets/images/${p.imagen}');background-size:contain;background-repeat:no-repeat;background-position:${bgPos};background-color:#1a2d4d;border-radius:12px;"></div>
   <div style="position:absolute;inset:0;background:${overlay};border-radius:12px;"></div>
   <div style="position:relative;z-index:2;padding:${contentPad};display:flex;flex-direction:column;justify-content:space-between;height:100%;">
     ${badgeWrap}
