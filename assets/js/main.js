@@ -475,7 +475,7 @@ const proyectos = [
   { id: 'mapocho', nombre: 'Mapocho', categoria: 'retail', col: 5, minH: '340px', destacado: true, imagen: 'inmobiliaria-montecarlo.png', bgPos: 'center' },
   { id: 'huerfanos', nombre: 'Huérfanos', categoria: 'retail', col: 5, minH: '340px', destacado: true, imagen: 'Local huerfanos.JPG', bgPos: 'center' },
   // FILA 3 (5+5=10)
-  { id: 'la-florida', nombre: 'La Florida', categoria: 'retail', col: 5, destacado: true, badges: ['AMPLIACIÓN'], imagen: 'centro-comercial-la-florda.jpg' },
+  { id: 'la-florida', nombre: 'La Florida', categoria: 'retail', col: 5, destacado: true, imagen: 'centro-comercial-la-florda.jpg' },
   { id: 'cantagallo', nombre: 'Cantagallo', categoria: 'retail', col: 5, destacado: true, imagen: 'Local Cantagallo.JPG' },
   // FILA 4 (5+5=10)
   { id: 'pajaritos', nombre: 'Pajaritos', categoria: 'retail', col: 5, destacado: true, imagen: 'Local Pajaritos.JPG' },
