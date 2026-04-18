@@ -573,8 +573,7 @@ function renderPortfolio() {
     if (isHeroXL) minHeight = '320px';
     else if (isHeroTall) minHeight = '460px';
     else if (isHeroLG) minHeight = '150px';
-    else if (hasImage && (p.categoria === 'retail' || p.categoria === 'centros-comerciales')) minHeight = '220px';
-    else if (hasImage) minHeight = '160px';
+    else if (hasImage) minHeight = '220px';
 
     // Grid span
     const gridCol = (isHeroXL || isHeroLG) ? 'grid-column: span 2;' : '';
