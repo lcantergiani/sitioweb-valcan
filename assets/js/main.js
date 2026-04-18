@@ -472,8 +472,8 @@ const proyectos = [
   { id: 'quilicura', nombre: 'Punto Centro Quilicura', categoria: 'retail', col: 3, row: 2, destacado: true, badges: ['EN DESARROLLO'], imagen: 'punto-centro.jpg' },
   { id: 'hilton', nombre: 'Hotel Hilton', categoria: 'hoteleria', col: 1, row: 2, destacado: true, badges: ['EN DESARROLLO'], imagen: 'hotel hilton.jpg' },
   // FILA 2
-  { id: 'mapocho', nombre: 'Mapocho', categoria: 'retail', col: 2, destacado: true, imagen: 'inmobiliaria-montecarlo.png' },
-  { id: 'huerfanos', nombre: 'Huérfanos', categoria: 'retail', col: 2, destacado: true, imagen: 'Local huerfanos.JPG' },
+  { id: 'mapocho', nombre: 'Mapocho', categoria: 'retail', col: 2, minH: '260px', destacado: true, imagen: 'inmobiliaria-montecarlo.png', bgPos: 'center top' },
+  { id: 'huerfanos', nombre: 'Huérfanos', categoria: 'retail', col: 2, minH: '260px', destacado: true, imagen: 'Local huerfanos.JPG', bgPos: 'center top' },
   // FILA 3
   { id: 'la-florida', nombre: 'La Florida', categoria: 'retail', col: 2, destacado: true, badges: ['AMPLIACIÓN'], imagen: 'centro-comercial-la-florda.jpg' },
   { id: 'cantagallo', nombre: 'Cantagallo', categoria: 'retail', col: 2, destacado: true, imagen: 'Local Cantagallo.JPG' },
@@ -564,6 +564,7 @@ function renderPortfolio() {
   container.innerHTML = items.map(p => {
     const cat = catConfig[p.categoria];
     const hasImage = !!p.imagen;
+    const bgPos = p.bgPos || 'center';
     const col = p.col || 1;
     const row = p.row || 1;
     const isHero = row > 1;
@@ -574,7 +575,7 @@ function renderPortfolio() {
     const heroClass = isHero ? ' portfolio-hero' : '';
 
     // Min-height
-    const minHeight = isHero ? '0' : '220px';
+    const minHeight = isHero ? '460px' : (p.minH || '220px');
 
     // Badge HTML
     const badgeStyle = 'padding:4px 11px;font-size:11px;border-radius:4px;font-weight:500;letter-spacing:0.5px;text-transform:uppercase;z-index:3;';
@@ -599,7 +600,7 @@ function renderPortfolio() {
       const badgeWrap = `<div style="display:inline-flex;gap:8px;">${catBadge}${extraBadges}</div>`;
 
       return `<div class="portfolio-card${heroClass}" style="${gridCol}${gridRow}border-radius:12px;position:relative;min-height:${minHeight};border:${border};overflow:hidden;">
-  <div style="position:absolute;inset:0;background-image:url('assets/images/${p.imagen}');background-size:cover;background-position:center;border-radius:12px;"></div>
+  <div style="position:absolute;inset:0;background-image:url('assets/images/${p.imagen}');background-size:cover;background-position:${bgPos};border-radius:12px;"></div>
   <div style="position:absolute;inset:0;background:${overlay};border-radius:12px;"></div>
   <div style="position:relative;z-index:2;padding:${contentPad};display:flex;flex-direction:column;justify-content:space-between;height:100%;box-sizing:border-box;">
     ${badgeWrap}
