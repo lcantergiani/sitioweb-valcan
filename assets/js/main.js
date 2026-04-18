@@ -472,8 +472,8 @@ const proyectos = [
   { id: 'quilicura', nombre: 'Punto Centro Quilicura', categoria: 'retail', col: 6, row: 2, destacado: true, badges: ['EN DESARROLLO'], imagen: 'punto-centro.jpg' },
   { id: 'hilton', nombre: 'Hotel Hilton', categoria: 'hoteleria', col: 4, row: 2, destacado: true, badges: ['EN DESARROLLO'], imagen: 'hotel hilton.jpg' },
   // FILA 2 (5+5=10)
-  { id: 'mapocho', nombre: 'Mapocho', categoria: 'retail', col: 5, minH: '260px', destacado: true, imagen: 'inmobiliaria-montecarlo.png', bgPos: 'center top' },
-  { id: 'huerfanos', nombre: 'Huérfanos', categoria: 'retail', col: 5, minH: '260px', destacado: true, imagen: 'Local huerfanos.JPG', bgPos: 'center top' },
+  { id: 'mapocho', nombre: 'Mapocho', categoria: 'retail', col: 5, minH: '340px', destacado: true, imagen: 'inmobiliaria-montecarlo.png', bgPos: 'center' },
+  { id: 'huerfanos', nombre: 'Huérfanos', categoria: 'retail', col: 5, minH: '340px', destacado: true, imagen: 'Local huerfanos.JPG', bgPos: 'center' },
   // FILA 3 (5+5=10)
   { id: 'la-florida', nombre: 'La Florida', categoria: 'retail', col: 5, destacado: true, badges: ['AMPLIACIÓN'], imagen: 'centro-comercial-la-florda.jpg' },
   { id: 'cantagallo', nombre: 'Cantagallo', categoria: 'retail', col: 5, destacado: true, imagen: 'Local Cantagallo.JPG' },
