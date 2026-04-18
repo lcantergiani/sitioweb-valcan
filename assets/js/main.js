@@ -472,7 +472,7 @@ const proyectos = [
   { id: 'la-florida', nombre: 'La Florida', categoria: 'retail', size: 'hero-lg', destacado: true, badges: ['AMPLIACIÓN'], imagen: 'centro-comercial-la-florda.jpg' },
   { id: 'mapocho', nombre: 'Mapocho', categoria: 'retail', size: 'standard', destacado: true, imagen: 'inmobiliaria-montecarlo.png', bgPos: 'center top' },
   { id: 'huerfanos', nombre: 'Huérfanos', categoria: 'retail', size: 'standard', destacado: true, imagen: 'Local huerfanos.JPG', bgPos: 'center top' },
-  { id: 'hilton', nombre: 'Hotel Hilton', categoria: 'hoteleria', size: 'hero-lg', destacado: true, badges: ['EN DESARROLLO'], imagen: 'hilton.jpg' },
+  { id: 'hilton', nombre: 'Hotel Hilton', categoria: 'hoteleria', size: 'hero-tall', destacado: true, badges: ['EN DESARROLLO'], imagen: 'hilton.jpg' },
   { id: 'pajaritos', nombre: 'Pajaritos', categoria: 'retail', size: 'standard', destacado: true, imagen: 'Local Pajaritos.JPG', bgPos: 'center top' },
   { id: 'cantagallo', nombre: 'Cantagallo', categoria: 'retail', size: 'standard', destacado: true, imagen: 'Local Cantagallo.JPG', bgPos: 'center top' },
   { id: 'ciudad-satelite', nombre: 'Ciudad Satélite', categoria: 'retail', size: 'standard', destacado: true, imagen: 'Local Ciudad Satelite.JPG', bgPos: 'center top' },
@@ -558,7 +558,8 @@ function renderPortfolio() {
     const cat = catConfig[p.categoria];
     const isHeroXL = p.size === 'hero-xl';
     const isHeroLG = p.size === 'hero-lg';
-    const isHero = isHeroXL || isHeroLG;
+    const isHeroTall = p.size === 'hero-tall';
+    const isHero = isHeroXL || isHeroLG || isHeroTall;
     const hasImage = !!p.imagen;
     const bgPos = p.bgPos || 'center';
 
@@ -570,13 +571,14 @@ function renderPortfolio() {
     // Determine min-height
     let minHeight = '110px';
     if (isHeroXL) minHeight = '320px';
+    else if (isHeroTall) minHeight = '460px';
     else if (isHeroLG) minHeight = '150px';
     else if (hasImage && (p.categoria === 'retail' || p.categoria === 'centros-comerciales')) minHeight = '220px';
     else if (hasImage) minHeight = '160px';
 
     // Grid span
-    const gridCol = isHero ? 'grid-column: span 2;' : '';
-    const gridRow = isHeroXL ? 'grid-row: span 2;' : '';
+    const gridCol = (isHeroXL || isHeroLG) ? 'grid-column: span 2;' : '';
+    const gridRow = (isHeroXL || isHeroTall) ? 'grid-row: span 2;' : '';
 
     // Border
     const border = isHero ? '1px solid rgba(255,255,255,0.12)' : '1px solid rgba(255,255,255,0.08)';
@@ -594,13 +596,13 @@ function renderPortfolio() {
     ).join('');
 
     // Title style
-    const titleSize = isHeroXL ? '26px' : isHeroLG ? '18px' : '15px';
+    const titleSize = isHeroXL ? '26px' : (isHeroLG || isHeroTall) ? '18px' : '15px';
     const titleStyle = `color:white;font-size:${titleSize};font-weight:500;text-shadow:0 1px 4px rgba(0,0,0,0.8);${isHeroXL ? 'line-height:1.2;' : ''}`;
     const titleClass = 'card-title';
 
     if (hasImage) {
       // Card with image
-      const contentPad = isHeroXL ? '1.5rem' : isHeroLG ? '1.25rem' : '1rem';
+      const contentPad = isHeroXL ? '1.5rem' : (isHeroLG || isHeroTall) ? '1.25rem' : '1rem';
       const badgeWrap = isHero
         ? `<div style="display:inline-flex;gap:8px;margin-bottom:${isHeroXL ? '12px' : '10px'};">${catBadge}${extraBadges}</div>`
         : catBadge;
