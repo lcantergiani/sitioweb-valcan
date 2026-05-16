@@ -488,7 +488,7 @@ const proyectos = [
   // FILA 6 – Diversificación (4+4+4=12)
   { id: 'la-invernada', nombre: 'La Invernada', categoria: 'agricola', col: 4, destacado: true, imagen: 'la-invernada-agricultura.jpg' },
   { id: 'central-biomasa', nombre: 'Central Biomasa', categoria: 'energia', col: 4, destacado: true, badges: ['EN DESARROLLO'], imagen: 'energia-renovable.jpg' },
-  { id: 'dunas-tirua', nombre: 'Proyecto Dunas de Tirúa', categoria: 'energia', col: 4, destacado: true, badges: ['EN DESARROLLO'], imagen: 'energia-renovable.jpg' },
+  { id: 'dunas-tirua', nombre: 'Proyecto Dunas de Tirúa', categoria: 'energia', destacado: false, badges: ['EN DESARROLLO'], imagen: null },
   { id: 'valle-central', nombre: 'Alimentos Valle Central', categoria: 'private-equity', col: 4, destacado: true, imagen: 'pe-banner.png' },
   // No destacados
   { id: 'alameda', nombre: 'Alameda', categoria: 'retail', destacado: false, imagen: null },
