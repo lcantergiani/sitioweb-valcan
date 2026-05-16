@@ -490,11 +490,11 @@ const proyectos = [
   { id: 'energia', nombre: 'Energía Renovable', categoria: 'energia', col: 4, destacado: true, imagen: 'energia-renovable.jpg' },
   { id: 'valle-central', nombre: 'Alimentos Valle Central', categoria: 'private-equity', col: 4, destacado: true, imagen: 'pe-banner.png' },
   // No destacados
-  { id: 'ismael-valdes', nombre: 'Local Ismael Valdés Vergara', categoria: 'retail', destacado: false, imagen: null },
   { id: 'alameda', nombre: 'Alameda', categoria: 'retail', destacado: false, imagen: null },
-  { id: 'maipu', nombre: 'Maipú', categoria: 'retail', destacado: false, imagen: null },
   { id: 'la-cisterna', nombre: 'La Cisterna', categoria: 'retail', destacado: false, imagen: null },
   { id: 'la-florida-10149', nombre: 'La Florida 10149', categoria: 'retail', destacado: false, imagen: null },
+  { id: 'los-trapenses', nombre: 'Los Trapenses', categoria: 'retail', destacado: false, imagen: null },
+  { id: 'apoquindo', nombre: 'Apoquindo', categoria: 'retail', destacado: false, imagen: null },
   { id: 'fundo-montecarlo', nombre: 'Fundo Montecarlo', categoria: 'agricola', destacado: false, imagen: null },
   { id: 'campo-lonquimay', nombre: 'Campo Lonquimay', categoria: 'agricola', destacado: false, imagen: null },
   { id: 'ceroplas', nombre: 'Ceroplas', categoria: 'private-equity', destacado: false, imagen: null },
