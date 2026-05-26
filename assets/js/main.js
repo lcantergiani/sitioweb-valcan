@@ -522,9 +522,9 @@ const proyectos = [
   { id: 'dunas-tirua', nombre: 'Proyecto Dunas de Tirúa', categoria: 'energia', destacado: false, badges: ['EN DESARROLLO'], imagen: null },
   { id: 'valle-central', nombre: 'Alimentos Valle Central', categoria: 'private-equity', col: 4, destacado: true, imagen: 'pe-banner.png' },
   // No destacados
-  { id: 'el-alba', nombre: 'El Alba', categoria: 'retail', destacado: false, imagen: null },
-  { id: 'la-cisterna', nombre: 'La Cisterna', categoria: 'retail', destacado: false, imagen: null },
-  { id: 'alameda', nombre: 'Alameda', categoria: 'retail', destacado: false, imagen: null },
+  { id: 'el-alba', nombre: 'El Alba', categoria: 'retail', col: 6, destacado: true, imagen: 'El Alba.jpg' },
+  { id: 'la-cisterna', nombre: 'La Cisterna', categoria: 'retail', col: 6, destacado: true, imagen: 'La Cisterna.jpg' },
+  { id: 'alameda', nombre: 'Alameda', categoria: 'retail', col: 6, destacado: true, imagen: 'Alameda.jpg' },
   { id: 'los-trapenses', nombre: 'Los Trapenses', categoria: 'retail', destacado: false, imagen: null },
   { id: 'apoquindo', nombre: 'Apoquindo', categoria: 'retail', destacado: false, imagen: null },
   { id: 'houston', nombre: 'Houston', categoria: 'residencial', destacado: false, imagen: null },
