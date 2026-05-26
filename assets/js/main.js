@@ -601,7 +601,9 @@ function renderPortfolio() {
     const cat = catConfig[p.categoria];
     const hasImage = !!p.imagen;
     const bgPos = p.bgPos || 'center';
-    const col = p.col || 1;
+    // When filtering by category, give non-highlighted cards same size as highlighted ones
+    const defaultCol = (currentFilter !== 'destacados' && !p.col) ? 6 : (p.col || 1);
+    const col = defaultCol;
     const row = p.row || 1;
     const isHero = row > 1;
 
