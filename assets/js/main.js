@@ -585,7 +585,6 @@ function renderFilters() {
 }
 
 function renderPortfolio() {
-  console.log("currentLang:", currentLang);
   const container = document.getElementById('bento-cards');
   if (!container) return;
 
