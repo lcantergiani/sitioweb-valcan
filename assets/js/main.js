@@ -155,17 +155,32 @@ const i18n = {
     // Portafolio
     'port.label': 'Portafolio',
     'port.title': 'Proyectos Destacados',
+    'port.subtitle': 'Seis décadas construyendo un portafolio diversificado en Chile y Estados Unidos',
     'port.cat_cc': 'Centro Comercial',
-    'port.cat_ret': 'Retail',
-    'port.cat_res': 'Residencial',
-    'port.cat_agr': 'Agrícola',
-    'port.cat_ene': 'Energía',
+    'port.cat_ret': 'RETAIL',
+    'port.cat_res': 'RESIDENCIAL',
+    'port.cat_hot': 'HOTELERÍA',
+    'port.cat_agr': 'AGRÍCOLA',
+    'port.cat_ene': 'ENERGÍA',
     'port.cat_inv': 'Inversiones',
+    'port.cat_pe': 'PRIVATE EQUITY',
     'port.energia': 'Energía Renovable',
-    'port.stat1': 'm² en retail',
-    'port.stat2': 'unidades residenciales',
-    'port.stat3': 'hoteles desarrollados',
-    'port.stat4': 'años de experiencia',
+    'port.tab_destacados': 'Destacados',
+    'port.tab_retail': 'Retail',
+    'port.tab_residencial': 'Residencial',
+    'port.tab_hoteleria': 'Hotelería',
+    'port.tab_agricola': 'Agrícola',
+    'port.tab_energia': 'Energía',
+    'port.tab_pe': 'Private Equity',
+    'port.badge_dev': 'EN DESARROLLO',
+    'port.stat1': 'M² EN RETAIL',
+    'port.stat1_m': 'M² EN RETAIL',
+    'port.stat2': 'UNIDADES RESIDENCIALES',
+    'port.stat2_m': 'UNIDADES RESID.',
+    'port.stat3': 'EMPRESAS EN PORTAFOLIO',
+    'port.stat3_m': 'EMPRESAS',
+    'port.stat4': 'AÑOS DE EXPERIENCIA',
+    'port.stat4_m': 'AÑOS',
     // Quiénes Somos
     'about.label': 'Nuestra Historia',
     'about.title': 'Quiénes Somos',
@@ -303,17 +318,32 @@ const i18n = {
     // Portafolio
     'port.label': 'Portfolio',
     'port.title': 'Featured Projects',
+    'port.subtitle': 'Six decades building a diversified portfolio in Chile and the United States',
     'port.cat_cc': 'Shopping Center',
-    'port.cat_ret': 'Retail',
-    'port.cat_res': 'Residential',
-    'port.cat_agr': 'Agriculture',
-    'port.cat_ene': 'Energy',
+    'port.cat_ret': 'RETAIL',
+    'port.cat_res': 'RESIDENTIAL',
+    'port.cat_hot': 'HOSPITALITY',
+    'port.cat_agr': 'AGRICULTURE',
+    'port.cat_ene': 'ENERGY',
     'port.cat_inv': 'Investments',
+    'port.cat_pe': 'PRIVATE EQUITY',
     'port.energia': 'Renewable Energy',
-    'port.stat1': 'sqm in retail',
-    'port.stat2': 'residential units',
-    'port.stat3': 'hotels developed',
-    'port.stat4': 'years of experience',
+    'port.tab_destacados': 'Featured',
+    'port.tab_retail': 'Retail',
+    'port.tab_residencial': 'Residential',
+    'port.tab_hoteleria': 'Hospitality',
+    'port.tab_agricola': 'Agriculture',
+    'port.tab_energia': 'Energy',
+    'port.tab_pe': 'Private Equity',
+    'port.badge_dev': 'IN DEVELOPMENT',
+    'port.stat1': 'SQM IN RETAIL',
+    'port.stat1_m': 'SQM IN RETAIL',
+    'port.stat2': 'RESIDENTIAL UNITS',
+    'port.stat2_m': 'RESID. UNITS',
+    'port.stat3': 'PORTFOLIO COMPANIES',
+    'port.stat3_m': 'COMPANIES',
+    'port.stat4': 'YEARS OF EXPERIENCE',
+    'port.stat4_m': 'YEARS',
     // Quiénes Somos
     'about.label': 'Our History',
     'about.title': 'About Us',
@@ -425,7 +455,10 @@ const i18n = {
   }
 };
 
+let currentLang = 'es';
+
 function setLanguage(lang) {
+  currentLang = lang;
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.getAttribute('data-i18n');
     if (i18n[lang] && i18n[lang][key]) {
@@ -443,6 +476,8 @@ function setLanguage(lang) {
   });
   document.documentElement.lang = lang === 'en' ? 'en' : 'es';
   localStorage.setItem('valcan_lang', lang);
+  renderFilters();
+  renderPortfolio();
 }
 
 // Language switcher click handlers
@@ -452,19 +487,20 @@ document.querySelectorAll('.nav__lang-btn').forEach(btn => {
 
 // Apply saved language on load
 const savedLang = localStorage.getItem('valcan_lang');
-if (savedLang && savedLang !== 'es') {
-  setLanguage(savedLang);
+if (savedLang) {
+  currentLang = savedLang;
+  if (savedLang !== 'es') setLanguage(savedLang);
 }
 
 // ===== PORTAFOLIO DATA-DRIVEN =====
 
 const catConfig = {
-  'retail':       { label: 'RETAIL',        bg: 'rgba(93,202,165,0.2)',    color: '#5DCAA5' },
-  'residencial':  { label: 'RESIDENCIAL',   bg: 'rgba(127,148,197,0.22)', color: '#A5B4D1' },
-  'hoteleria':    { label: 'HOTELERÍA',     bg: 'rgba(180,160,120,0.2)',  color: '#D4BC99' },
-  'agricola':     { label: 'AGRÍCOLA',      bg: 'rgba(140,170,120,0.22)', color: '#A9C49A' },
-  'energia':      { label: 'ENERGÍA',       bg: 'rgba(200,170,100,0.2)',  color: '#D4BC7A' },
-  'private-equity': { label: 'PRIVATE EQUITY', bg: 'rgba(170,140,180,0.22)', color: '#C5AACB' },
+  'retail':       { i18nKey: 'port.cat_ret', bg: 'rgba(93,202,165,0.2)',    color: '#5DCAA5' },
+  'residencial':  { i18nKey: 'port.cat_res', bg: 'rgba(127,148,197,0.22)', color: '#A5B4D1' },
+  'hoteleria':    { i18nKey: 'port.cat_hot', bg: 'rgba(180,160,120,0.2)',  color: '#D4BC99' },
+  'agricola':     { i18nKey: 'port.cat_agr', bg: 'rgba(140,170,120,0.22)', color: '#A9C49A' },
+  'energia':      { i18nKey: 'port.cat_ene', bg: 'rgba(200,170,100,0.2)',  color: '#D4BC7A' },
+  'private-equity': { i18nKey: 'port.cat_pe', bg: 'rgba(170,140,180,0.22)', color: '#C5AACB' },
 };
 
 const proyectos = [
@@ -510,13 +546,13 @@ const proyectos = [
 let currentFilter = 'destacados';
 
 const filterTabs = [
-  { key: 'destacados', label: 'Destacados' },
-  { key: 'retail', label: 'Retail' },
-  { key: 'residencial', label: 'Residencial' },
-  { key: 'hoteleria', label: 'Hotelería' },
-  { key: 'agricola', label: 'Agrícola' },
-  { key: 'energia', label: 'Energía' },
-  { key: 'private-equity', label: 'Private Equity' },
+  { key: 'destacados', i18nKey: 'port.tab_destacados' },
+  { key: 'retail', i18nKey: 'port.tab_retail' },
+  { key: 'residencial', i18nKey: 'port.tab_residencial' },
+  { key: 'hoteleria', i18nKey: 'port.tab_hoteleria' },
+  { key: 'agricola', i18nKey: 'port.tab_agricola' },
+  { key: 'energia', i18nKey: 'port.tab_energia' },
+  { key: 'private-equity', i18nKey: 'port.tab_pe' },
 ];
 
 function renderFilters() {
@@ -533,7 +569,8 @@ function renderFilters() {
     const countStyle = isActive
       ? 'background:rgba(15,110,86,0.2);padding:2px 8px;border-radius:10px;font-size:11px;'
       : 'color:#B5D4F4;font-size:11px;';
-    return `<div class="bento-tab" data-filter="${tab.key}" style="${isActive ? activeStyle : inactiveStyle}padding:10px 18px;border-radius:8px;font-size:13px;font-weight:500;display:flex;align-items:center;gap:8px;cursor:pointer;">${tab.label} <span style="${countStyle}">${count}</span></div>`;
+    const tabLabel = i18n[currentLang][tab.i18nKey] || tab.key;
+    return `<div class="bento-tab" data-filter="${tab.key}" style="${isActive ? activeStyle : inactiveStyle}padding:10px 18px;border-radius:8px;font-size:13px;font-weight:500;display:flex;align-items:center;gap:8px;cursor:pointer;">${tabLabel} <span style="${countStyle}">${count}</span></div>`;
   }).join('');
 
   container.querySelectorAll('.bento-tab').forEach(btn => {
@@ -583,10 +620,12 @@ function renderPortfolio() {
 
     // Badge HTML
     const badgeStyle = 'padding:4px 11px;font-size:11px;border-radius:4px;font-weight:500;letter-spacing:0.5px;text-transform:uppercase;z-index:3;';
-    const catBadge = `<div style="background:${cat.bg};color:${cat.color};${badgeStyle}align-self:flex-start;display:inline-block;">${cat.label}</div>`;
-    const extraBadges = (p.badges || []).map(b =>
-      `<div style="background:rgba(255,255,255,0.95);color:#1e3a6f;${badgeStyle}">${b}</div>`
-    ).join('');
+    const catLabel = i18n[currentLang][cat.i18nKey] || cat.i18nKey;
+    const catBadge = `<div style="background:${cat.bg};color:${cat.color};${badgeStyle}align-self:flex-start;display:inline-block;">${catLabel}</div>`;
+    const extraBadges = (p.badges || []).map(b => {
+      const badgeText = b === 'EN DESARROLLO' ? i18n[currentLang]['port.badge_dev'] : b;
+      return `<div style="background:rgba(255,255,255,0.95);color:#1e3a6f;${badgeStyle}">${badgeText}</div>`;
+    }).join('');
 
     // Overlay gradient
     const heroOverlay = 'linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.5) 40%, rgba(0,0,0,0.1) 75%, transparent 100%)';
