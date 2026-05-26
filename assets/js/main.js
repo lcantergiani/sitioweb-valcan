@@ -485,12 +485,7 @@ document.querySelectorAll('.nav__lang-btn').forEach(btn => {
   btn.addEventListener('click', () => setLanguage(btn.getAttribute('data-lang')));
 });
 
-// Apply saved language on load
-const savedLang = localStorage.getItem('valcan_lang');
-if (savedLang) {
-  currentLang = savedLang;
-  if (savedLang !== 'es') setLanguage(savedLang);
-}
+// Saved language is applied after all data is defined (see bottom of file)
 
 // ===== PORTAFOLIO DATA-DRIVEN =====
 
@@ -590,6 +585,7 @@ function renderFilters() {
 }
 
 function renderPortfolio() {
+  console.log("currentLang:", currentLang);
   const container = document.getElementById('bento-cards');
   if (!container) return;
 
@@ -662,3 +658,9 @@ function renderPortfolio() {
 
 renderFilters();
 renderPortfolio();
+
+// Apply saved language on load (must run after data arrays and render functions)
+const savedLang = localStorage.getItem('valcan_lang');
+if (savedLang && savedLang !== 'es') {
+  setLanguage(savedLang);
+}
