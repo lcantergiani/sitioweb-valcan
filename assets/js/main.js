@@ -601,10 +601,9 @@ function renderPortfolio() {
     const cat = catConfig[p.categoria];
     const hasImage = !!p.imagen;
     const bgPos = p.bgPos || 'center';
-    // When filtering by category, give non-highlighted cards same size as highlighted ones
-    const defaultCol = (currentFilter !== 'destacados' && !p.col) ? 6 : (p.col || 1);
-    const col = defaultCol;
-    const row = p.row || 1;
+    const isCategoryView = currentFilter !== 'destacados';
+    const col = isCategoryView ? 4 : (p.col || 1);
+    const row = isCategoryView ? 1 : (p.row || 1);
     const isHero = row > 1;
 
     // Grid span
@@ -613,7 +612,7 @@ function renderPortfolio() {
     const heroClass = isHero ? ' portfolio-hero' : '';
 
     // Min-height
-    const minHeight = isHero ? '460px' : (p.minH || '220px');
+    const minHeight = isCategoryView ? '280px' : (isHero ? '460px' : (p.minH || '220px'));
 
     // Badge HTML
     const badgeStyle = 'padding:4px 11px;font-size:11px;border-radius:4px;font-weight:500;letter-spacing:0.5px;text-transform:uppercase;z-index:3;';
