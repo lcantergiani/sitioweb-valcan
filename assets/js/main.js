@@ -532,9 +532,9 @@ const proyectos = [
   { id: 'monserrate', nombre: 'Monserrate', categoria: 'residencial', destacado: false, imagen: 'Monserrate.jpg' },
   { id: 'campo-lonquimay', nombre: 'Campo Lonquimay', categoria: 'agricola', destacado: false, imagen: 'Campo Lonquimay.jpg' },
   { id: 'fundo-montecarlo', nombre: 'Fundo Montecarlo', categoria: 'agricola', destacado: false, imagen: 'Fundo Montecarlo.png' },
-  { id: 'multimedical', nombre: 'Multimedical', categoria: 'private-equity', destacado: false, imagen: null },
-  { id: 'ceroplas', nombre: 'Ceroplas', categoria: 'private-equity', destacado: false, imagen: null },
-  { id: 'amatime', nombre: 'Amatime', categoria: 'private-equity', destacado: false, imagen: null },
+  { id: 'multimedical', nombre: 'Multimedical', categoria: 'private-equity', destacado: false, imagen: 'Multimedical.png' },
+  { id: 'ceroplas', nombre: 'Ceroplas', categoria: 'private-equity', destacado: false, imagen: 'Ceroplas.jpg' },
+  { id: 'amatime', nombre: 'Amatime', categoria: 'private-equity', destacado: false, imagen: 'AMATIME.jpg' },
   { id: 'wellnature', nombre: 'Wellnature', categoria: 'private-equity', destacado: false, imagen: null },
 ];
 
