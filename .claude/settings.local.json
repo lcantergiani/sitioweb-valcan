@@ -20,7 +20,12 @@
       "Bash(python3 -c \"from PIL import Image; print\\('Pillow available'\\)\")",
       "Bash(python -c \"from PIL import Image; print\\('Pillow available'\\)\")",
       "Bash(python -c \"from PIL import Image; print\\('Pillow OK'\\)\")",
-      "Bash(python3 -c \"from PIL import Image; print\\('Pillow OK'\\)\")"
+      "Bash(python3 -c \"from PIL import Image; print\\('Pillow OK'\\)\")",
+      "Bash(node -c assets/js/main.js)",
+      "Bash(node -e ':*)",
+      "Bash(gh api:*)",
+      "Bash(gh run:*)",
+      "Bash(gh workflow:*)"
     ]
   }
 }
