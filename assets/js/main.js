@@ -517,7 +517,7 @@ const proyectos = [
   { id: 'los-leones', nombre: 'Edificio Los Leones', categoria: 'residencial', col: 2, minH: '380px', destacado: true, imagen: 'edificio-los-leones.jpg' },
   { id: 'concepcion', nombre: 'Edificio Concepción', categoria: 'residencial', col: 3, minH: '380px', destacado: true, imagen: 'Edificio Concepcion.jpg' },
   // FILA 6 – Diversificación (4+4+4=12)
-  { id: 'la-invernada', nombre: 'La Invernada', categoria: 'agricola', col: 4, destacado: true, imagen: 'la-invernada-agricultura.jpg' },
+  { id: 'la-invernada', nombre: 'Fundo La Invernada', categoria: 'agricola', col: 4, destacado: true, imagen: 'la-invernada-agricultura.jpg' },
   { id: 'central-biomasa', nombre: 'Central Biomasa', categoria: 'energia', col: 4, destacado: true, badges: ['EN DESARROLLO'], imagen: 'Central Biomasa.jpg' },
   { id: 'dunas-tirua', nombre: 'Proyecto Dunas de Tirúa', categoria: 'energia', destacado: false, badges: ['EN DESARROLLO'], imagen: 'energia-renovable.jpg' },
   { id: 'valle-central', nombre: 'Alimentos Valle Central', categoria: 'private-equity', col: 4, destacado: true, imagen: 'pe-banner.png' },
@@ -530,7 +530,7 @@ const proyectos = [
   { id: 'huston', nombre: 'Huston', categoria: 'residencial', destacado: false, imagen: 'Huston.jpg' },
   { id: 'vedao', nombre: 'Vedao', categoria: 'residencial', destacado: false, imagen: 'Vedado.jpg' },
   { id: 'monserrate', nombre: 'Monserrate', categoria: 'residencial', destacado: false, imagen: 'Monserrate.jpg' },
-  { id: 'campo-lonquimay', nombre: 'Campo Lonquimay', categoria: 'agricola', destacado: false, imagen: 'Campo Lonquimay.jpg' },
+  { id: 'campo-lonquimay', nombre: 'Fundo Lonquimay', categoria: 'agricola', destacado: false, imagen: 'Campo Lonquimay.jpg' },
   { id: 'fundo-montecarlo', nombre: 'Fundo Montecarlo', categoria: 'agricola', destacado: false, imagen: 'Fundo Montecarlo.png' },
   { id: 'multimedical', nombre: 'Multimedical', categoria: 'private-equity', destacado: false, imagen: 'Multimedical.png' },
   { id: 'ceroplas', nombre: 'Ceroplas', categoria: 'private-equity', destacado: false, imagen: 'Ceroplas.jpg' },
