@@ -1073,13 +1073,33 @@ body {
 }
 
 .footer__bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
   padding: 1.5rem 0;
+  gap: 0.25rem;
 }
 
 .footer__bottom p {
   font-size: 0.8rem;
   color: rgba(255,255,255,0.35);
+}
+
+.footer__credit a {
+  color: rgba(255,255,255,0.35);
+  text-decoration: none;
+}
+
+.footer__credit a:hover {
+  color: rgba(255,255,255,0.6);
+}
+
+@media (min-width: 768px) {
+  .footer__bottom {
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }
 
 /* ===== DESKTOP (768px+) ===== */
