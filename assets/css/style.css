@@ -556,6 +556,10 @@ body {
   gap: 2.5rem;
 }
 
+.quienes__grid--reverse .quienes__img {
+  order: -1;
+}
+
 .quienes__img img {
   width: 100%;
   border-radius: 10px;
@@ -1197,6 +1201,14 @@ body {
     grid-template-columns: 1fr 1.2fr;
     gap: 3.5rem;
     align-items: center;
+  }
+
+  .quienes__grid--reverse {
+    grid-template-columns: 1.2fr 1fr;
+  }
+
+  .quienes__grid--reverse .quienes__img {
+    order: 0;
   }
 
   .quienes__img img {
