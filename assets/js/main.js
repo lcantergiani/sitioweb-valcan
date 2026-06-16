@@ -533,7 +533,7 @@ const proyectos = [
   { id: 'campo-lonquimay', nombre: 'Fundo Lonquimay', categoria: 'agricola', destacado: false, imagen: 'Campo Lonquimay.jpg' },
   { id: 'fundo-montecarlo', nombre: 'Fundo Montecarlo', categoria: 'agricola', destacado: false, imagen: 'Fundo Montecarlo.png' },
   { id: 'multimedical', nombre: 'Multimedical', categoria: 'private-equity', destacado: false, imagen: 'Multimedical.png' },
-  { id: 'ceroplas', nombre: 'Ceroplas', categoria: 'private-equity', destacado: false, imagen: 'Ceroplas.jpg' },
+  { id: 'ceroplas', nombre: 'Ceroplas', categoria: 'private-equity', destacado: false, imagen: 'Ceroplas.png' },
   { id: 'amatime', nombre: 'Amatime', categoria: 'private-equity', destacado: false, imagen: 'AMATIME.jpg' },
   { id: 'wellnature', nombre: 'Wellnature', categoria: 'private-equity', destacado: false, imagen: 'wellnature.png' },
 ];
