@@ -526,7 +526,7 @@ const proyectos = [
   { id: 'la-cisterna', nombre: 'La Cisterna', categoria: 'retail', destacado: false, imagen: 'La Cisterna.jpg' },
   { id: 'alameda', nombre: 'Alameda', categoria: 'retail', destacado: false, imagen: 'Alameda.jpg' },
   { id: 'los-trapenses', nombre: 'Los Trapenses', categoria: 'retail', destacado: false, imagen: null },
-  { id: 'apoquindo', nombre: 'Apoquindo', categoria: 'retail', destacado: false, imagen: null },
+  { id: 'apoquindo', nombre: 'Apoquindo', categoria: 'retail', destacado: false, imagen: 'apoquindo.jpg' },
   { id: 'huston', nombre: 'Huston', categoria: 'residencial', destacado: false, imagen: 'Huston.jpg' },
   { id: 'vedao', nombre: 'Vedao', categoria: 'residencial', destacado: false, imagen: 'Vedado.jpg' },
   { id: 'monserrate', nombre: 'Monserrate', categoria: 'residencial', destacado: false, imagen: 'Monserrate.jpg' },
