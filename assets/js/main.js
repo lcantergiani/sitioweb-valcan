@@ -535,7 +535,7 @@ const proyectos = [
   { id: 'multimedical', nombre: 'Multimedical', categoria: 'private-equity', destacado: false, imagen: 'Multimedical.png' },
   { id: 'ceroplas', nombre: 'Ceroplas', categoria: 'private-equity', destacado: false, imagen: 'Ceroplas.jpg' },
   { id: 'amatime', nombre: 'Amatime', categoria: 'private-equity', destacado: false, imagen: 'AMATIME.jpg' },
-  { id: 'wellnature', nombre: 'Wellnature', categoria: 'private-equity', destacado: false, imagen: null },
+  { id: 'wellnature', nombre: 'Wellnature', categoria: 'private-equity', destacado: false, imagen: 'wellnature.jpg' },
 ];
 
 let currentFilter = 'destacados';
