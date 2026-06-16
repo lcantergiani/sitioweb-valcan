@@ -164,6 +164,7 @@ const i18n = {
     'port.cat_ene': 'ENERGÍA',
     'port.cat_inv': 'Inversiones',
     'port.cat_pe': 'PRIVATE EQUITY',
+    'port.cat_parking': 'PARKING',
     'port.energia': 'Energía Renovable',
     'port.tab_destacados': 'Destacados',
     'port.tab_retail': 'Retail',
@@ -172,6 +173,7 @@ const i18n = {
     'port.tab_agricola': 'Agrícola',
     'port.tab_energia': 'Energía',
     'port.tab_pe': 'Private Equity',
+    'port.tab_parking': 'Parking',
     'port.badge_dev': 'EN DESARROLLO',
     'port.stat1': 'M² EN RETAIL',
     'port.stat1_m': 'M² EN RETAIL',
@@ -181,6 +183,10 @@ const i18n = {
     'port.stat3_m': 'EMPRESAS',
     'port.stat4': 'AÑOS DE EXPERIENCIA',
     'port.stat4_m': 'AÑOS',
+    'port.stat1_parking': 'ESTACIONAMIENTOS',
+    'port.stat2_parking': 'UBICACIONES',
+    'port.stat3_parking': 'M² CONSTRUIDOS',
+    'port.stat4_parking': 'AÑOS DE OPERACIÓN',
     // Quiénes Somos
     'about.label': 'Nuestra Historia',
     'about.title': 'Quiénes Somos',
@@ -327,6 +333,7 @@ const i18n = {
     'port.cat_ene': 'ENERGY',
     'port.cat_inv': 'Investments',
     'port.cat_pe': 'PRIVATE EQUITY',
+    'port.cat_parking': 'PARKING',
     'port.energia': 'Renewable Energy',
     'port.tab_destacados': 'Featured',
     'port.tab_retail': 'Retail',
@@ -335,6 +342,7 @@ const i18n = {
     'port.tab_agricola': 'Agriculture',
     'port.tab_energia': 'Energy',
     'port.tab_pe': 'Private Equity',
+    'port.tab_parking': 'Parking',
     'port.badge_dev': 'IN DEVELOPMENT',
     'port.stat1': 'SQM IN RETAIL',
     'port.stat1_m': 'SQM IN RETAIL',
@@ -344,6 +352,10 @@ const i18n = {
     'port.stat3_m': 'COMPANIES',
     'port.stat4': 'YEARS OF EXPERIENCE',
     'port.stat4_m': 'YEARS',
+    'port.stat1_parking': 'PARKING SPACES',
+    'port.stat2_parking': 'LOCATIONS',
+    'port.stat3_parking': 'SQM BUILT',
+    'port.stat4_parking': 'YEARS OF OPERATION',
     // Quiénes Somos
     'about.label': 'Our History',
     'about.title': 'About Us',
@@ -496,6 +508,7 @@ const catConfig = {
   'agricola':     { i18nKey: 'port.cat_agr', bg: 'rgba(140,170,120,0.22)', color: '#A9C49A' },
   'energia':      { i18nKey: 'port.cat_ene', bg: 'rgba(200,170,100,0.2)',  color: '#D4BC7A' },
   'private-equity': { i18nKey: 'port.cat_pe', bg: 'rgba(170,140,180,0.22)', color: '#C5AACB' },
+  'parking':        { i18nKey: 'port.cat_parking', bg: 'rgba(130,170,200,0.22)', color: '#8BB8D6' },
 };
 
 const proyectos = [
@@ -536,6 +549,8 @@ const proyectos = [
   { id: 'ceroplas', nombre: 'Ceroplas', categoria: 'private-equity', destacado: false, imagen: 'Ceroplas.png' },
   { id: 'amatime', nombre: 'Amatime', categoria: 'private-equity', destacado: false, imagen: 'AMATIME.jpg' },
   { id: 'wellnature', nombre: 'Wellnature', categoria: 'private-equity', destacado: false, imagen: 'wellnature.png' },
+  { id: 'parking-mapocho', nombre: 'Mapocho', categoria: 'parking', destacado: false, imagen: null },
+  { id: 'parking-huerfanos', nombre: 'Huérfanos', categoria: 'parking', destacado: false, imagen: null },
 ];
 
 let currentFilter = 'destacados';
@@ -544,6 +559,7 @@ const filterTabs = [
   { key: 'destacados', i18nKey: 'port.tab_destacados' },
   { key: 'retail', i18nKey: 'port.tab_retail' },
   { key: 'residencial', i18nKey: 'port.tab_residencial' },
+  { key: 'parking', i18nKey: 'port.tab_parking' },
   { key: 'hoteleria', i18nKey: 'port.tab_hoteleria' },
   { key: 'agricola', i18nKey: 'port.tab_agricola' },
   { key: 'energia', i18nKey: 'port.tab_energia' },
