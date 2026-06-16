@@ -550,7 +550,9 @@ const proyectos = [
   { id: 'campo-lonquimay', nombre: 'Fundo Lonquimay', categoria: 'agricola', destacado: false, imagen: 'Campo Lonquimay.jpg' },
   { id: 'fundo-montecarlo', nombre: 'Fundo Montecarlo', categoria: 'agricola', destacado: false, imagen: 'Fundo Montecarlo.png' },
   { id: 'multimedical', nombre: 'Multimedical', categoria: 'private-equity', destacado: false, imagen: 'Multimedical.png' },
-  { id: 'ceroplas', nombre: 'Ceroplas', categoria: 'private-equity', destacado: false, imagen: 'Ceroplas.png' },
+  { id: 'ceroplas', nombre: 'Ceroplas', categoria: 'private-equity', destacado: false, imagen: 'Ceroplas.png',
+    descripcionHover: 'Ceroplas es una fábrica de bolsas compostables y biodegradables con certificaciones TÜV Austria Home Compostable e ISO 9001. Pioneros en Chile en el desarrollo de soluciones de packaging sustentable.',
+    descripcionHoverEn: 'Ceroplas is a compostable and biodegradable bag factory with TÜV Austria Home Compostable and ISO 9001 certifications. Pioneers in Chile in the development of sustainable packaging solutions.' },
   { id: 'amatime', nombre: 'Amatime', categoria: 'private-equity', destacado: false, imagen: 'AMATIME.jpg' },
   { id: 'wellnature', nombre: 'Wellnature', categoria: 'private-equity', destacado: false, imagen: 'wellnature.png' },
   { id: 'parking-mapocho', nombre: 'Mapocho', categoria: 'parking', destacado: false, imagen: null },
@@ -655,12 +657,17 @@ function renderPortfolio() {
     const contentPad = isHero ? '1.5rem' : '1rem';
     const border = isHero ? '1px solid rgba(255,255,255,0.12)' : '1px solid rgba(255,255,255,0.08)';
 
+    const hoverOverlay = p.descripcionHover
+      ? `<div class="card-overlay"><p>${currentLang === 'en' && p.descripcionHoverEn ? p.descripcionHoverEn : p.descripcionHover}</p></div>`
+      : '';
+
     if (hasImage) {
       const badgeWrap = `<div style="display:inline-flex;gap:8px;">${catBadge}${extraBadges}</div>`;
 
       return `<div class="portfolio-card${heroClass}" style="${gridCol}${gridRow}border-radius:12px;position:relative;min-height:${minHeight};border:${border};overflow:hidden;">
   <div style="position:absolute;inset:0;background-image:url('assets/images/${p.imagen}');background-size:cover;background-position:${bgPos};border-radius:12px;"></div>
   <div style="position:absolute;inset:0;background:${overlay};border-radius:12px;"></div>
+  ${hoverOverlay}
   <div style="position:relative;z-index:2;padding:${contentPad};display:flex;flex-direction:column;justify-content:space-between;height:100%;box-sizing:border-box;">
     ${badgeWrap}
     <div class="${titleClass}" style="${titleStyle}">${p.nombre}</div>
@@ -668,7 +675,8 @@ function renderPortfolio() {
 </div>`;
     } else {
       const badgeRow = `<div style="display:flex;gap:8px;align-items:flex-start;">${catBadge}${extraBadges}</div>`;
-      return `<div class="portfolio-card${heroClass}" style="${gridCol}${gridRow}background:linear-gradient(135deg,#3a4a7a 0%,#2a3a6a 100%);border-radius:12px;padding:1rem;min-height:${minHeight};display:flex;flex-direction:column;justify-content:space-between;border:1px solid rgba(175,169,236,0.3);box-sizing:border-box;">
+      return `<div class="portfolio-card${heroClass}" style="${gridCol}${gridRow}background:linear-gradient(135deg,#3a4a7a 0%,#2a3a6a 100%);border-radius:12px;padding:1rem;min-height:${minHeight};display:flex;flex-direction:column;justify-content:space-between;border:1px solid rgba(175,169,236,0.3);box-sizing:border-box;position:relative;overflow:hidden;">
+    ${hoverOverlay}
     ${badgeRow}
     <div class="${titleClass}" style="${titleStyle}">${p.nombre}</div>
 </div>`;

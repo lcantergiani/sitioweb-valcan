@@ -1628,4 +1628,33 @@ body {
   .trabaja-cultura__grid {
     grid-template-columns: repeat(3, 1fr);
   }
+
+  .portfolio-card:hover .card-overlay {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+/* Overlay hover info */
+.card-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 5;
+  border-radius: 12px;
+  pointer-events: none;
+}
+
+.card-overlay p {
+  color: white;
+  font-size: 14px;
+  line-height: 1.5;
+  text-align: center;
+  margin: 0;
 }
