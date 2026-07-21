@@ -152,6 +152,8 @@ const i18n = {
     'rubros.ene_d': 'Financiamiento y desarrollo de proyectos de energías renovables no convencionales',
     'rubros.pe': 'Private Equity',
     'rubros.pe_d': 'Fondos de inversión privado para financiar y apoyar proyectos innovadores',
+    'rubros.fin': 'Inversiones Financieras',
+    'rubros.fin_d': 'Gestión de portafolio y participación en instrumentos financieros de renta fija y variable',
     // Portafolio
     'port.label': 'Portafolio',
     'port.title': 'Proyectos Destacados',
@@ -323,6 +325,8 @@ const i18n = {
     'rubros.ene_d': 'Financing and development of non-conventional renewable energy projects',
     'rubros.pe': 'Private Equity',
     'rubros.pe_d': 'Private investment funds to finance and support innovative projects',
+    'rubros.fin': 'Financial Investments',
+    'rubros.fin_d': 'Portfolio management and participation in fixed and variable income financial instruments',
     // Portafolio
     'port.label': 'Portfolio',
     'port.title': 'Featured Projects',
