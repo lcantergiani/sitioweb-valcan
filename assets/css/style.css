@@ -1686,3 +1686,218 @@ body {
   text-align: center;
   margin: 0;
 }
+
+/* ===== OPORTUNIDADES PAGE ===== */
+.oport-section {
+  padding: 4rem 0 5rem;
+  background: var(--blanco);
+}
+
+/* Tabs de navegación interna */
+.oport-tabs {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 3rem;
+}
+
+.oport-tab {
+  padding: 0.7rem 1.75rem;
+  border-radius: 999px;
+  border: 1.5px solid #dfe3ea;
+  background: var(--blanco);
+  color: var(--azul);
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+.oport-tab:hover {
+  border-color: var(--teal);
+  color: var(--teal);
+}
+
+.oport-tab--active {
+  background: var(--azul);
+  border-color: var(--azul);
+  color: var(--blanco);
+}
+
+/* Paneles */
+.oport-panel {
+  display: none;
+}
+
+.oport-panel--active {
+  display: block;
+}
+
+/* Grid responsive: 1 col mobile / 2 tablet / 3 desktop */
+.oport-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.75rem;
+}
+
+@media (min-width: 640px) {
+  .oport-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .oport-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Card */
+.oport-card {
+  background: var(--blanco);
+  border: 1px solid #eaeaea;
+  border-radius: 14px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.oport-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(26, 58, 122, 0.12);
+}
+
+.oport-card__photo {
+  aspect-ratio: 4 / 3;
+  background: var(--gris);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #9aa0ab;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-bottom: 1px solid #ececec;
+}
+
+.oport-card__body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1;
+}
+
+.oport-card__title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--azul);
+  margin-bottom: 0.25rem;
+}
+
+.oport-card__meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #666;
+  font-size: 0.88rem;
+}
+
+.oport-card__meta svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  color: var(--teal);
+}
+
+.oport-card__btn {
+  margin-top: auto;
+  align-self: flex-start;
+  background: var(--teal);
+  color: var(--blanco);
+  border: none;
+  padding: 0.65rem 1.6rem;
+  border-radius: 8px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 0.88rem;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.oport-card__btn:hover {
+  background: #1da5a3;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(35, 189, 187, 0.3);
+}
+
+/* Modal de consulta */
+.oport-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.oport-modal--open {
+  display: flex;
+}
+
+.oport-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 15, 35, 0.6);
+  backdrop-filter: blur(3px);
+}
+
+.oport-modal__dialog {
+  position: relative;
+  z-index: 1;
+  background: var(--blanco);
+  border-radius: 16px;
+  width: 100%;
+  max-width: 520px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 2.5rem;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.3);
+}
+
+.oport-modal__close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #888;
+  line-height: 0;
+  padding: 0.25rem;
+  transition: color 0.3s ease;
+}
+
+.oport-modal__close:hover {
+  color: var(--azul);
+}
+
+.oport-modal__title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--azul);
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.01em;
+}
+
+.oport-modal__subtitle {
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
