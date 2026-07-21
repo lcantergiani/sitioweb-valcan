@@ -22,6 +22,17 @@
       .bento-grid { grid-template-columns: 1fr !important; }
       .portfolio-card, .portfolio-card.portfolio-hero { grid-column: span 1 !important; grid-row: span 1 !important; min-height: 220px !important; max-height: 280px !important; }
     }
+    @media (max-width: 640px) {
+      /* Tarjetas más altas/cuadradas en mobile — aplica a TODAS las categorías, incl. Destacados */
+      .portfolio-card, .portfolio-card.portfolio-hero {
+        grid-column: span 1 !important;
+        grid-row: span 1 !important;
+        min-height: 280px !important;
+        max-height: none !important;
+        background-size: cover !important;
+        background-position: center !important;
+      }
+    }
     .portfolio-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.3); }
     .mobile-only { display: none; }
     .desktop-only { display: inline; }
