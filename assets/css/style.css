@@ -222,6 +222,21 @@ body {
   color: rgba(26,58,122,0.2);
 }
 
+/* Header mobile: logo centrado, hamburguesa a la derecha */
+@media (max-width: 767px) {
+  .nav__container {
+    justify-content: center;
+    position: relative;
+  }
+
+  .nav__toggle {
+    position: absolute;
+    right: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
 /* ===== HERO ===== */
 .hero {
   position: relative;
