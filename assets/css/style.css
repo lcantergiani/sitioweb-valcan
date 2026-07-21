@@ -394,8 +394,16 @@ body {
 
 .rubros__grid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+
+/* Rubros tablet: 3 columnas */
+@media (min-width: 640px) {
+  .rubros__grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
 }
 
 .rubros__item {
@@ -1172,9 +1180,9 @@ body {
     padding: 0 2rem;
   }
 
-  /* Rubros desktop */
+  /* Rubros tablet: 3 columnas */
   .rubros__grid {
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
   }
 
@@ -1335,8 +1343,28 @@ body {
     grid-template-columns: repeat(3, 1fr);
   }
 
+  /* Rubros desktop: 6 columnas en una sola fila */
+  .rubros__grid {
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1rem;
+  }
+
   .rubros__item {
-    padding: 2.5rem 1.5rem;
+    padding: 1.5rem 1rem;
+  }
+
+  .rubros__icon {
+    width: 44px;
+    height: 44px;
+    margin-bottom: 1rem;
+  }
+
+  .rubros__item h3 {
+    font-size: 0.9rem;
+  }
+
+  .rubros__item p {
+    font-size: 0.78rem;
   }
 }
 
