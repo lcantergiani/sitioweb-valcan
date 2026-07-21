@@ -559,8 +559,8 @@ const proyectos = [
     descripcionHoverEn: 'Ceroplas is a compostable and biodegradable bag factory with TÜV Austria Home Compostable and ISO 9001 certifications. Pioneers in Chile in the development of sustainable packaging solutions.' },
   { id: 'amatime', nombre: 'Amatime', categoria: 'private-equity', destacado: false, imagen: 'AMATIME.jpg' },
   { id: 'wellnature', nombre: 'Wellnature', categoria: 'private-equity', destacado: false, imagen: 'wellnature.png' },
-  { id: 'parking-mapocho', nombre: 'Mapocho', categoria: 'parking', destacado: false, imagen: null },
-  { id: 'parking-huerfanos', nombre: 'Huérfanos', categoria: 'parking', destacado: false, imagen: null },
+  { id: 'parking-mapocho', nombre: 'Mapocho', categoria: 'parking', destacado: false, imagen: 'estacionamiento1.jpg' },
+  { id: 'parking-huerfanos', nombre: 'Huérfanos', categoria: 'parking', destacado: false, imagen: 'estacionamiento2.jpg' },
 ];
 
 let currentFilter = 'destacados';
