@@ -1659,6 +1659,63 @@ body {
   color: var(--teal);
 }
 
+/* Consentimiento de datos (Ley 21.719) */
+.form__consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+}
+
+.form__consent input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+  flex-shrink: 0;
+  accent-color: var(--teal);
+  cursor: pointer;
+}
+
+.form__consent label {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  cursor: pointer;
+}
+
+.form__privacy-info {
+  font-size: 0.78rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.04);
+  border-left: 2px solid rgba(255, 255, 255, 0.15);
+  border-radius: 6px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.form__privacy-info p {
+  margin: 0 0 0.6rem;
+}
+
+.form__privacy-info p:last-child {
+  margin-bottom: 0;
+}
+
+.form__privacy-info strong {
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 600;
+}
+
+.form__privacy-info a {
+  color: var(--teal);
+  text-decoration: underline;
+}
+
+.form__privacy-info a:hover {
+  color: #1da5a3;
+}
+
 @media (min-width: 768px) {
   .contacto__grid {
     grid-template-columns: 1fr 1fr;
