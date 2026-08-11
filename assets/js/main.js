@@ -323,7 +323,7 @@ const i18n = {
     'work.ph_position': 'Cargo de interés',
     'work.ph_message': 'Cuéntanos sobre ti y por qué te gustaría trabajar en Valcan',
     'work.consent_label': 'Acepto el tratamiento de mis datos personales.',
-    'work.privacy_info': '<p><strong>Información básica sobre protección de datos:</strong></p><p><strong>Responsable:</strong> Valcan Inversiones SpA.</p><p><strong>Finalidad:</strong> Gestionar su postulación en nuestros procesos de selección de personal presentes o futuros.</p><p><strong>Legitimación:</strong> Su consentimiento explícito al marcar esta casilla.</p><p><strong>Duración:</strong> Conservaremos su currículum por un plazo máximo de 12 meses desde su recepción, tras el cual será eliminado de forma segura.</p><p><strong>Derechos:</strong> Puede acceder, rectificar, suprimir sus datos y oponerse a su tratamiento enviando un correo a privacidad@valcan.cl.</p><p>Para más detalles, consulte nuestra <a href="#">Política de Privacidad de Candidatos</a>.</p>'
+    'work.privacy_info': '<p><strong>Información básica sobre protección de datos:</strong></p><p><strong>Responsable:</strong> Valcan Inversiones Limitada.</p><p><strong>Finalidad:</strong> Gestionar su postulación en nuestros procesos de selección de personal presentes o futuros.</p><p><strong>Legitimación:</strong> Su consentimiento explícito al marcar esta casilla.</p><p><strong>Duración:</strong> Conservaremos su currículum por un plazo máximo de 12 meses desde su recepción, tras el cual será eliminado de forma segura.</p><p><strong>Derechos:</strong> Puede acceder, rectificar, suprimir sus datos y oponerse a su tratamiento enviando un correo a scarlett.parra@valcan.cl.</p><p>Para más detalles, consulte nuestra <a href="#">Política de Privacidad de Candidatos</a>.</p>'
   },
   en: {
     // Nav
@@ -521,7 +521,7 @@ const i18n = {
     'work.ph_position': 'Position of interest',
     'work.ph_message': 'Tell us about yourself and why you would like to work at Valcan',
     'work.consent_label': 'I accept the processing of my personal data.',
-    'work.privacy_info': '<p><strong>Basic information on data protection:</strong></p><p><strong>Data Controller:</strong> Valcan Inversiones SpA.</p><p><strong>Purpose:</strong> To manage your application in our current or future personnel selection processes.</p><p><strong>Legal basis:</strong> Your explicit consent by checking this box.</p><p><strong>Retention:</strong> We will keep your CV for a maximum period of 12 months from its receipt, after which it will be securely deleted.</p><p><strong>Rights:</strong> You may access, rectify, delete your data and object to its processing by sending an email to privacidad@valcan.cl.</p><p>For more details, please see our <a href="#">Candidate Privacy Policy</a>.</p>'
+    'work.privacy_info': '<p><strong>Basic information on data protection:</strong></p><p><strong>Data Controller:</strong> Valcan Inversiones Limitada.</p><p><strong>Purpose:</strong> To manage your application in our current or future personnel selection processes.</p><p><strong>Legal basis:</strong> Your explicit consent by checking this box.</p><p><strong>Retention:</strong> We will keep your CV for a maximum period of 12 months from its receipt, after which it will be securely deleted.</p><p><strong>Rights:</strong> You may access, rectify, delete your data and object to its processing by sending an email to scarlett.parra@valcan.cl.</p><p>For more details, please see our <a href="#">Candidate Privacy Policy</a>.</p>'
   }
 };
 
