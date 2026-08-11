@@ -995,7 +995,15 @@ body {
   line-height: 1.6;
 }
 
-.empresas__card:hover {
+/* Solo las cards con sitio web (envueltas en enlace) se ven clickeables */
+.empresas__card--link {
+  display: block;
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
+}
+
+.empresas__card--link:hover {
   transform: translateY(-4px);
   box-shadow: 0 8px 30px rgba(26, 58, 122, 0.1);
   border-color: var(--teal);
