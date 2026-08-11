@@ -220,6 +220,7 @@ const i18n = {
     'about.p3': 'En el año 2004 esta cadena ya era una de las más importantes del país, contaba con más de 16 puntos de venta, ventas anuales por más de USD235 millones y más de 3000 trabajadores. Se caracterizaba por ser una de las cadenas más eficientes del país.',
     'about.p4': 'En Noviembre del año 2004 el grupo decide vender la operación de retail a la empresa Cencosud, conservando la propiedad de los locales y centros comerciales, los que fueron entregados en arriendo.',
     'about.p5': 'Así en ese año nace la empresa de Inversiones Valcan cuyo principal objetivo es administrar los flujos producto de la operación de venta.',
+    'about.p6': 'Desde entonces, Valcan ha diversificado sus inversiones consolidando un portafolio en sectores como real estate, agrícola, energía renovable y participación en distintas empresas, manteniéndose como un holding familiar con visión de largo plazo y presencia en Chile y Estados Unidos.',
     'about.chart': 'Supermercados Preferidos — Chile 2003',
     'about.source': 'Fuente: IBBO Investigación',
     // Fundador
@@ -418,6 +419,7 @@ const i18n = {
     'about.p3': 'By 2004, this chain was one of the most important in the country, with over 16 points of sale, annual sales exceeding USD 235 million and more than 3,000 employees. It was known as one of the most efficient chains in the country.',
     'about.p4': 'In November 2004, the group decided to sell the retail operation to Cencosud, retaining ownership of the stores and shopping centers, which were leased out.',
     'about.p5': 'That same year, Inversiones Valcan was born with the primary objective of managing the cash flows from the sale operation.',
+    'about.p6': 'Since then, Valcan has diversified its investments, consolidating a portfolio in sectors such as real estate, agriculture, renewable energy, and holdings in various companies, remaining a family holding with a long-term vision and presence in Chile and the United States.',
     'about.chart': 'Preferred Supermarkets — Chile 2003',
     'about.source': 'Source: IBBO Research',
     // Fundador
