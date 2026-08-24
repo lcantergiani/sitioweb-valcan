@@ -606,7 +606,7 @@ const proyectos = [
   { id: 'campo-lonquimay', nombre: 'Fundo Lonquimay', categoria: 'agricola', destacado: false, imagen: 'Campo Lonquimay.jpg' },
   { id: 'fundo-montecarlo', nombre: 'Fundo Montecarlo', categoria: 'agricola', destacado: false, imagen: 'Fundo Montecarlo.png' },
   { id: 'multimedical', nombre: 'Multimedical', categoria: 'private-equity', destacado: false, imagen: 'Multimedical.png' },
-  { id: 'ceroplas', nombre: 'Ceroplas', categoria: 'private-equity', destacado: false, imagen: 'Ceroplas.png',
+  { id: 'ceroplas', nombre: 'Ceroplas', categoria: 'private-equity', destacado: false, imagen: 'ceroplas.png',
     descripcionHover: 'Ceroplas es una fábrica de bolsas compostables y biodegradables con certificaciones TÜV Austria Home Compostable e ISO 9001. Pioneros en Chile en el desarrollo de soluciones de packaging sustentable.',
     descripcionHoverEn: 'Ceroplas is a compostable and biodegradable bag factory with TÜV Austria Home Compostable and ISO 9001 certifications. Pioneers in Chile in the development of sustainable packaging solutions.' },
   { id: 'amatime', nombre: 'Amatime', categoria: 'private-equity', destacado: false, imagen: 'AMATIME.jpg' },
