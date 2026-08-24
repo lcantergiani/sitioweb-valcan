@@ -133,9 +133,13 @@
   <!-- HERO -->
   <section class="hero" id="hero">
     <div class="hero__bg">
-      <img src="assets/images/banner-2.jpg" alt="Ciudad" loading="eager">
+      <picture>
+        <!-- Mobile (<768px): imagen vertical -->
+        <source media="(max-width: 767px)" srcset="assets/images/valcanbannermobile.JPG">
+        <!-- Escritorio/tablet: imagen horizontal -->
+        <img src="assets/images/bannervalcan2.jpeg" alt="Valcan Inversiones" loading="eager">
+      </picture>
     </div>
-    <div class="hero__overlay"></div>
     <div class="hero__content">
       <p class="hero__subtitle" data-i18n="hero.subtitle">Grupo Valcan</p>
       <h1 class="hero__title" data-i18n="hero.title">MÁS DE 60 AÑOS CREANDO VALOR</h1>
